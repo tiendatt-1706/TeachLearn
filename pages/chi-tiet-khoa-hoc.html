@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi Tiết Khóa Học - TechLearn</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+        rel="stylesheet" />
+        
+    <!-- Preconnect to external domains for faster LCP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://code.jquery.com" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body class="course-detail-light-theme">
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="fas fa-code"></i>
+                <span>Tech<span class="brand-highlight">Learn</span></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="fas fa-home"></i> Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="khoa-hoc.html"><i class="fas fa-graduation-cap"></i> Khóa
+                            học</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lo-trinh.html"><i class="fas fa-route"></i> Lộ trình</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="review.html"><i class="fas fa-star"></i> Review</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html"><i class="fas fa-circle-question"></i> FAQ</a>
+                    </li>
+                </ul>
+                <div class="nav-auth">
+                    <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                    </button>
+                    <button class="btn btn-primary btn-glow" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        <i class="fas fa-user-plus"></i> Đăng ký
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="course-detail-page position-relative pb-5">
+        <div class="course-detail-light-hero position-absolute w-100" id="dynamicHeaderBg"
+            style="top: 0; left: 0; height: 700px; z-index: 0"></div>
+
+        <div class="container position-relative" style="z-index: 10; padding-top: 100px">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" style="
+                    justify-content: flex-start !important;
+                    margin-bottom: 20px;
+                    font-size: 0.9rem;
+                    --bs-breadcrumb-divider: '>';
+                ">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html" class="text-decoration-none"
+                            style="color: #6b7a99; font-size: 0.9rem">Trang chủ</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="khoa-hoc.html" class="text-decoration-none"
+                            style="color: #6b7a99; font-size: 0.9rem">Khóa học</a>
+                    </li>
+                    <li class="breadcrumb-item active" id="breadcrumbTitle" style="
+                        color: #64748b;
+                        font-size: 0.9rem;
+                    ">
+                        Chi tiết khóa học
+                    </li>
+                </ol>
+            </nav>
+
+            <div class="row g-4 mt-2 text-start">
+                <div class="col-lg-8 pe-lg-5">
+                    <h1 class="page-header-title mb-3 fw-bold" id="courseTitle" style="
+                                font-size: 2.125rem;
+                                color: #1e293b !important;
+                                line-height: 1.4;
+                            ">
+                        Đang tải...
+                    </h1>
+                    <div class="mb-4" id="courseDesc" style="
+                                font-size: 1.05rem;
+                                color: #334155 !important;
+                                line-height: 1.7;
+                                max-width: 100%;
+                                margin-left: 0;
+                            ">
+                        Vui lòng đợi trong giây lát.
+                    </div>
+
+                    <div class="d-inline-flex flex-wrap align-items-center gap-3 mt-2 mb-4 px-3 py-2 rounded-pill"
+                        style="
+                                background-color: rgba(226, 232, 240, 0.6);
+                                max-width: fit-content;
+                                margin-left: 0;
+                            ">
+                        <span class="badge rounded-pill d-flex align-items-center gap-2" id="courseBestseller" style="
+                                    background-color: #fff;
+                                    color: #1e293b;
+                                    padding: 6px 14px;
+                                    font-weight: 600;
+                                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                                ">
+                            <i class="fas fa-medal" style="color: #f59e0b; font-size: 1.1rem"></i>
+                            Bestseller
+                        </span>
+                        <span class="fw-bold" style="color: #1e293b; font-size: 0.95rem"><span
+                                id="courseRating">5.0</span>
+                            <span style="color: #f59e0b; margin-left: 2px"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></span></span>
+                        <span class="text-secondary" style="
+                                    font-size: 0.95rem;
+                                    border-left: 1px solid #cbd5e1;
+                                    padding-left: 10px;
+                                "><span id="courseReviews" class="fw-medium">0</span>
+                            đánh giá</span>
+                        <span class="text-secondary" style="
+                                    font-size: 0.95rem;
+                                    border-left: 1px solid #cbd5e1;
+                                    padding-left: 10px;
+                                "><span id="courseStudents" class="fw-medium">0</span>
+                            học viên</span>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-2 mt-2">
+                        <div class="instructor-avatar rounded-circle d-flex align-items-center justify-content-center"
+                            style="
+                                    width: 32px;
+                                    height: 32px;
+                                    background: #0f172a;
+                                    color: #fff;
+                                ">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <span class="fw-bold" style="color: #1e293b; font-size: 0.95rem" id="heroInstructor">Đội Ngũ
+                            TechLearn</span>
+                    </div>
+
+                    <div style="height: 100px"></div>
+
+
+                    <div class="course-detail-nav-wrapper mb-4 sticky-top z-3" style="top: 90px">
+                        <a class="course-detail-nav-item active" href="#section-overview">Tổng quan</a>
+                        <a class="course-detail-nav-item" href="#section-curriculum">Lộ trình</a>
+                        <a class="course-detail-nav-item" href="#section-benefits">Chi tiết</a>
+                        <a class="course-detail-nav-item" href="#section-register">Đăng ký</a>
+                    </div>
+
+                    <div class="course-sections-container">
+                        <div id="section-overview" class="course-section mb-5" style="scroll-margin-top: 200px">
+                            <div class="detail-card mb-4 p-0" style="
+                                        border: none !important;
+                                        box-shadow: none !important;
+                                        background: transparent !important;
+                                    ">
+                                <h5 class="fw-bold mb-4" style="
+                                            color: #0f172a;
+                                            font-size: 1.5rem;
+                                        ">
+                                    Tổng quan khóa học
+                                </h5>
+                                <div class="overview-content text-secondary" id="overviewContent" style="
+                                            font-size: 0.95rem;
+                                            line-height: 1.6;
+                                        ">
+                                    <p>Đang tải dữ liệu...</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="section-curriculum" class="course-section mb-5" style="scroll-margin-top: 200px">
+                            <div class="detail-card mb-4 p-0" style="
+                                        border: none !important;
+                                        box-shadow: none !important;
+                                        background: transparent !important;
+                                    ">
+                                <h5 class="fw-bold mb-4" style="
+                                            color: #0f172a;
+                                            font-size: 1.5rem;
+                                        ">
+                                    Lộ trình khóa học
+                                </h5>
+                                <div class="accordion curriculum-accordion" id="curriculumAccordion">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="section-benefits" class="course-section mb-5" style="scroll-margin-top: 200px">
+                            <div id="benefitsContent">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4">
+                    <div class="course-enroll-sidebar sticky-top" style="
+                                top: 100px;
+                                border: 3px solid #00adef;
+                                border-radius: 12px;
+                                background: #fff;
+                            ">
+                        <div class="p-3">
+                            <div class="sidebar-image-wrapper rounded" id="sidebarImageBg" style="
+                                        height: 180px;
+                                        box-shadow: 0 4px 6px -1px
+                                            rgba(0, 0, 0, 0.1);
+                                        border-radius: 8px !important;
+                                        overflow: hidden;
+                                    ">
+                                <div class="sidebar-image-overlay" style="
+                                            background: rgba(15, 23, 42, 0.7);
+                                        ">
+                                    <h4 id="sidebarTitle" style="
+                                                font-size: 1.3rem;
+                                                line-height: 1.5;
+                                                color: #fff;
+                                                font-weight: 800;
+                                            ">
+                                        Course Title
+                                    </h4>
+                                </div>
+                                <i class="fas fa-laptop-code sidebar-icon" id="sidebarIcon"></i>
+                            </div>
+                        </div>
+                        <div class="sidebar-body px-4 pb-4">
+                            <div class="price-section d-flex flex-wrap align-items-end gap-2 mb-3">
+                                <h2 class="current-price fw-bold mb-0" id="coursePrice" style="
+                                            color: #0f172a;
+                                            font-size: 1.6rem;
+                                        ">
+                                    0 đ
+                                </h2>
+                                <span class="original-price text-muted text-decoration-line-through mb-1"
+                                    id="courseOriginalPrice" style="font-size: 1.05rem">0 đ</span>
+                            </div>
+
+                            <button class="btn btn-enroll w-100 py-3 mb-4 fw-bold rounded shadow-sm" onclick="
+                                        showToast(
+                                            'Đăng ký thành công!',
+                                            'success',
+                                        )
+                                    " style="
+                                        background-color: #00adef !important;
+                                        border-color: #00adef !important;
+                                        font-size: 1.15rem;
+                                        color: #fff;
+                                    ">
+                                Đăng Ký Học
+                            </button>
+
+                            <div class="d-flex justify-content-between align-items-center mb-4 px-2">
+                                <div class="countdown-box text-center">
+                                    <h4 class="countdown-number fw-bold text-primary mb-0" id="days">17</h4>
+                                    <span class="countdown-label text-muted" style="font-size: 0.8rem">Ngày</span>
+                                </div>
+                                <div class="countdown-box text-center">
+                                    <h4 class="countdown-number fw-bold text-primary mb-0" id="hours">06</h4>
+                                    <span class="countdown-label text-muted" style="font-size: 0.8rem">Giờ</span>
+                                </div>
+                                <div class="countdown-box text-center">
+                                    <h4 class="countdown-number fw-bold text-primary mb-0" id="minutes">20</h4>
+                                    <span class="countdown-label text-muted" style="font-size: 0.8rem">Phút</span>
+                                </div>
+                                <div class="countdown-box text-center">
+                                    <h4 class="countdown-number fw-bold text-primary mb-0" id="seconds">06</h4>
+                                    <span class="countdown-label text-muted" style="font-size: 0.8rem">Giây</span>
+                                </div>
+                            </div>
+
+                            <ul class="sidebar-info-list list-unstyled mb-4" style="font-size: 0.95rem">
+                                <li class="d-flex justify-content-between mb-3 border-bottom pb-2 border-light-subtle">
+                                    <span class="text-secondary">Ngày khai giảng</span>
+                                    <span class="fw-semibold text-dark text-end" id="courseStartDate"
+                                        style="color: #0056b3 !important">Đang cập nhật</span>
+                                </li>
+                                <li class="d-flex justify-content-between mb-3 border-bottom pb-2 border-light-subtle">
+                                    <span class="text-secondary">Lịch học</span>
+                                    <span class="fw-semibold text-dark text-end" id="courseSchedule"
+                                        style="color: #0056b3 !important">Đang cập nhật</span>
+                                </li>
+                                <li class="d-flex justify-content-between mb-3 border-bottom pb-2 border-light-subtle">
+                                    <span class="text-secondary">Giờ học</span>
+                                    <span class="fw-semibold text-dark text-end" id="courseTime"
+                                        style="color: #0056b3 !important">Đang cập nhật</span>
+                                </li>
+                                <li class="d-flex justify-content-between mb-3 border-bottom pb-2 border-light-subtle">
+                                    <span class="text-secondary">Số lượng bài giảng</span>
+                                    <span class="fw-semibold text-dark text-end" style="color: #0056b3 !important"><span
+                                            id="courseLessons">0</span></span>
+                                </li>
+                                <li class="d-flex justify-content-between mb-2">
+                                    <span class="text-secondary">Giảng viên</span>
+                                    <span class="fw-semibold text-end" style="color: #0056b3 !important"
+                                        id="courseInstructor">TechLearn</span>
+                                </li>
+                            </ul>
+
+                            <div class="consultation-box text-center p-3 rounded" style="background: #f4e8ff">
+                                <p class="text-secondary mb-2" style="font-size: 0.9rem">
+                                    Bạn cần tư vấn thêm, liên hệ với 28Tech:
+                                </p>
+                                <a href="#"
+                                    class="d-inline-flex align-items-center gap-2 px-4 py-2 bg-white rounded-pill text-decoration-none fw-bold shadow-sm"
+                                    style="
+                                            color: #7c3aed;
+                                            font-size: 0.95rem;
+                                        ">
+                                    <i class="fas fa-phone-alt"></i> Zalo:
+                                    0965303260
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="section-register" class="course-section mt-5 mb-5" style="scroll-margin-top: 110px">
+                <div class="register-banner">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-6">
+                            <div class="badge bg-primary mb-3 text-uppercase fw-bold" style="
+                                        letter-spacing: 1px;
+                                        font-size: 0.7rem;
+                                        padding: 6px 12px;
+                                    ">
+                                Khóa học
+                            </div>
+                            <h2 class="fw-bold mb-4" style="font-size: 2.2rem; line-height: 1.2">
+                                Lập trình Backend NodeJS 2026
+                            </h2>
+
+                            <div class="mb-5 d-flex flex-column gap-3">
+                                <div class="d-flex align-items-start gap-3">
+                                    <i class="fas fa-check-circle text-info mt-1"></i>
+                                    <p class="mb-0 opacity-75">
+                                        Học đúng trọng tâm, lộ trình rõ ràng
+                                        từ nền tảng đến thực chiến.
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-start gap-3">
+                                    <i class="fas fa-check-circle text-info mt-1"></i>
+                                    <p class="mb-0 opacity-75">
+                                        Thực hành trên các dự án quy mô
+                                        chuẩn doanh nghiệp.
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-start gap-3">
+                                    <i class="fas fa-check-circle text-info mt-1"></i>
+                                    <p class="mb-0 opacity-75">
+                                        Tự tin ứng tuyển vị trí Backend
+                                        Developer ngay sau khóa học.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="register-countdown-container">
+                                <div class="countdown-box">
+                                    <span class="countdown-number" id="days">17</span>
+                                    <span class="countdown-label">Ngày</span>
+                                </div>
+                                <div class="countdown-box">
+                                    <span class="countdown-number" id="hours">06</span>
+                                    <span class="countdown-label">Giờ</span>
+                                </div>
+                                <div class="countdown-box">
+                                    <span class="countdown-number" id="minutes">20</span>
+                                    <span class="countdown-label">Phút</span>
+                                </div>
+                                <div class="countdown-box">
+                                    <span class="countdown-number" id="seconds">06</span>
+                                    <span class="countdown-label">Giây</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-6">
+                            <div class="register-form-card">
+                                <h4 class="text-center">
+                                    Đăng ký khóa học
+                                </h4>
+                                <form id="courseRegisterForm">
+                                    <div class="mb-4">
+                                        <label class="form-label small fw-bold text-secondary">Họ tên *</label>
+                                        <input type="text" class="form-control" placeholder="Nhập họ và tên của bạn"
+                                            required />
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label small fw-bold text-secondary">Số điện thoại *</label>
+                                        <input type="tel" class="form-control" placeholder="Nhập số điện thoại"
+                                            required />
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label small fw-bold text-secondary">Ghi chú (nếu có)</label>
+                                        <textarea class="form-control" rows="2"
+                                            placeholder="Thông tin thêm..."></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-register-now">
+                                        ĐĂNG KÝ NGAY
+                                        <i class="fas fa-arrow-right ms-2"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">
+                        <h3>
+                            <i class="fas fa-code"></i> Tech<span>Learn</span>
+                        </h3>
+                        <p>Nền tảng E-Learning hàng đầu Việt Nam.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
+                                    class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a
+                                href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Khám phá</h4>
+                        <ul>
+                            <li><a href="khoa-hoc.html">Khóa học</a></li>
+                            <li><a href="lo-trinh.html">Lộ trình</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="review.html">Review</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4>Danh mục</h4>
+                        <ul>
+                            <li>
+                                <a href="khoa-hoc.html?cat=frontend">Frontend</a>
+                            </li>
+                            <li>
+                                <a href="khoa-hoc.html?cat=backend">Backend</a>
+                            </li>
+                            <li>
+                                <a href="khoa-hoc.html?cat=fullstack">Fullstack</a>
+                            </li>
+                            <li>
+                                <a href="khoa-hoc.html?cat=ai">AI / ML</a>
+                            </li>
+                            <li>
+                                <a href="khoa-hoc.html?cat=basic">Nền tảng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h4>Liên hệ</h4>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i> 123
+                                Nguyễn Huệ, Q.1, TP.HCM
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i> 0909 123 456
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                contact@techlearn.vn
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TechLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <script src="../js/script.js" defer></script>
+</body>
+
+</html>

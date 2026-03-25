@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu hỏi thường gặp - TechLearn</title>
+    <meta name="description" content="Giải đáp thắc mắc phổ biến nhất về TechLearn và các khóa học lập trình.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://code.jquery.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="fas fa-code"></i> <span>Tech<span class="brand-highlight">Learn</span></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"><span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span></button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="khoa-hoc.html"><i class="fas fa-graduation-cap"></i> Khóa học</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lo-trinh.html"><i class="fas fa-route"></i> Lộ trình</a></li>
+                    <li class="nav-item"><a class="nav-link" href="review.html"><i class="fas fa-star"></i> Review</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="faq.html"><i class="fas fa-circle-question"></i> FAQ</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-sign-in-alt"></i> Đăng nhập</button>
+                    <button class="btn btn-primary btn-sm btn-glow" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="fas fa-user-plus"></i> Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header page-header-faq">
+        <div class="page-header-bg"><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
+        <div class="container">
+            <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html"><i class="fas fa-home"></i> Trang chủ</a></li><li class="breadcrumb-item active">FAQ</li></ol></nav>
+            <h1 class="page-header-title">Câu hỏi <span class="gradient-text">thường gặp</span></h1>
+            <p class="page-header-subtitle">Giải đáp những thắc mắc phổ biến nhất của học viên</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <!-- FAQ Category Tabs -->
+            <div class="faq-tabs" data-aos="fade-up">
+                <button class="filter-btn active" data-faq="all"><i class="fas fa-th-large"></i> Tất cả</button>
+                <button class="filter-btn" data-faq="general"><i class="fas fa-info-circle"></i> Chung</button>
+                <button class="filter-btn" data-faq="courses"><i class="fas fa-graduation-cap"></i> Khóa học</button>
+                <button class="filter-btn" data-faq="payment"><i class="fas fa-credit-card"></i> Thanh toán</button>
+                <button class="filter-btn" data-faq="career"><i class="fas fa-briefcase"></i> Nghề nghiệp</button>
+            </div>
+
+            <div class="row g-4 mt-3">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion faq-accordion" id="faqAccordion">
+                        <!-- General -->
+                        <div class="accordion-item faq-item" data-faq-cat="general" data-aos="fade-up">
+                            <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1"><i class="fas fa-circle-question faq-icon"></i> Tôi chưa biết gì về lập trình, có thể bắt đầu từ đâu?</button></h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Hoàn toàn có thể! Bạn nên bắt đầu với khóa học <strong>"Nền tảng cơ bản"</strong> gồm HTML, CSS và JavaScript. Các khóa học được thiết kế từ zero, phù hợp cho người mới hoàn toàn. Sau đó, bạn có thể theo lộ trình Frontend hoặc Backend tùy sở thích.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item" data-faq-cat="courses" data-aos="fade-up">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2"><i class="fas fa-circle-question faq-icon"></i> Thời gian học mỗi khóa là bao lâu?</button></h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Mỗi khóa học có thời lượng từ <strong>30-55 giờ</strong> video bài giảng. Bạn có thể học theo tốc độ riêng, truy cập <strong>trọn đời không giới hạn</strong>. Trung bình học viên hoàn thành 1 khóa trong 2-3 tháng với tốc độ 1-2 giờ/ngày.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item" data-faq-cat="general" data-aos="fade-up">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3"><i class="fas fa-circle-question faq-icon"></i> Tôi có được hỗ trợ khi gặp khó khăn không?</button></h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Có! Chúng tôi có đội ngũ <strong>mentor hỗ trợ 24/7</strong> qua Discord và Zalo Group. Ngoài ra, mỗi khóa học đều có phần Q&A để bạn đặt câu hỏi trực tiếp cho giảng viên. Giảng viên sẽ trả lời trong vòng <strong>24 giờ</strong>.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item" data-faq-cat="courses" data-aos="fade-up">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4"><i class="fas fa-circle-question faq-icon"></i> Khóa học có cấp chứng chỉ không?</button></h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Có! Sau khi hoàn thành khóa học và pass bài kiểm tra cuối khóa (đạt &ge; 80%), bạn sẽ nhận <strong>chứng chỉ hoàn thành</strong> có mã xác thực. Chứng chỉ có thể chia sẻ trên LinkedIn và CV. Nhiều nhà tuyển dụng đã công nhận chứng chỉ của TechLearn.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item" data-faq-cat="payment" data-aos="fade-up">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5"><i class="fas fa-circle-question faq-icon"></i> Chính sách hoàn tiền như thế nào?</button></h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Chúng tôi cam kết <strong>hoàn tiền 100% trong 7 ngày</strong> nếu bạn không hài lòng với khóa học, không cần lý do. Sau 7 ngày, bạn vẫn có thể liên hệ hỗ trợ để được tư vấn chuyển đổi sang khóa học phù hợp hơn.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item" data-faq-cat="general" data-aos="fade-up">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6"><i class="fas fa-circle-question faq-icon"></i> Có thể học trên điện thoại không?</button></h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Có! TechLearn hỗ trợ học trên mọi thiết bị: điện thoại, máy tính bảng, laptop, desktop. Tuy nhiên, chúng tôi khuyến khích bạn <strong>thực hành code trên máy tính</strong> để có trải nghiệm tốt nhất. Bạn có thể xem video trên điện thoại khi di chuyển.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item" data-faq-cat="career" data-aos="fade-up">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7"><i class="fas fa-circle-question faq-icon"></i> Tôi nên chọn Frontend hay Backend?</button></h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Nếu bạn thích <strong>giao diện, thiết kế, sáng tạo</strong> → chọn Frontend. Nếu bạn thích <strong>logic, hệ thống, dữ liệu</strong> → chọn Backend. Nếu chưa chắc chắn, bạn có thể bắt đầu với <strong>Frontend</strong> vì kết quả trực quan hơn, dễ tạo động lực hơn. Xem thêm trang <a href="lo-trinh.html">Lộ trình</a> để so sánh chi tiết.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item" data-faq-cat="career" data-aos="fade-up">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8"><i class="fas fa-circle-question faq-icon"></i> Có hỗ trợ việc làm sau khi học xong không?</button></h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Có! TechLearn hợp tác với <strong>50+ doanh nghiệp công nghệ</strong> hàng đầu Việt Nam để giới thiệu việc làm cho học viên xuất sắc. Chúng tôi hỗ trợ viết CV, review portfolio và mock interview. <strong>85%</strong> học viên tìm được việc làm trong vòng 3 tháng sau khi hoàn thành lộ trình.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item" data-faq-cat="payment" data-aos="fade-up">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9"><i class="fas fa-circle-question faq-icon"></i> Có hình thức trả góp không?</button></h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Có! Chúng tôi hỗ trợ <strong>trả góp 0% lãi suất</strong> qua các ngân hàng và ví điện tử. Bạn có thể chia nhỏ thanh toán thành 3-6 kỳ. Ngoài ra, chúng tôi thường xuyên có <strong>chương trình khuyến mãi</strong> giảm giá lên đến 50% cho học viên mới.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item" data-faq-cat="courses" data-aos="fade-up">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10"><i class="fas fa-circle-question faq-icon"></i> Khóa học có được cập nhật không?</button></h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Có! Tất cả khóa học được <strong>cập nhật định kỳ</strong> theo phiên bản mới nhất của frameworks và công nghệ. Khi có phiên bản mới (ví dụ: React 19, Node 22), giảng viên sẽ bổ sung nội dung mới và bạn được truy cập <strong>miễn phí</strong> các bản cập nhật này.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="faq-contact" data-aos="fade-up">
+                <div class="text-center">
+                    <h3>Vẫn còn thắc mắc?</h3>
+                    <p style="color: var(--text-secondary);">Liên hệ với chúng tôi để được tư vấn trực tiếp</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="#" class="btn btn-primary btn-glow"><i class="fab fa-facebook-messenger"></i> Chat qua Messenger</a>
+                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-phone"></i> Gọi 0909 123 456</a>
+                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-envelope"></i> Gửi email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Sẵn sàng bắt đầu hành trình lập trình?</h2>
+                <p>Đăng ký miễn phí ngay hôm nay và nhận ưu đãi <strong>giảm 30%</strong> cho khóa học đầu tiên!</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="fas fa-rocket"></i> Đăng ký ngay</button>
+                    <a href="khoa-hoc.html" class="btn btn-outline-light btn-lg"><i class="fas fa-graduation-cap"></i> Xem khóa học</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6"><div class="footer-brand"><h3><i class="fas fa-code"></i> Tech<span>Learn</span></h3><p>Nền tảng E-Learning hàng đầu Việt Nam.</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-github"></i></a></div></div></div>
+                <div class="col-lg-2 col-md-6"><div class="footer-links"><h4>Khám phá</h4><ul><li><a href="khoa-hoc.html">Khóa học</a></li><li><a href="lo-trinh.html">Lộ trình</a></li><li><a href="blog.html">Blog</a></li><li><a href="review.html">Review</a></li><li><a href="faq.html">FAQ</a></li></ul></div></div>
+                <div class="col-lg-3 col-md-6"><div class="footer-links"><h4>Danh mục</h4><ul><li><a href="khoa-hoc.html?cat=frontend">Frontend</a></li><li><a href="khoa-hoc.html?cat=backend">Backend</a></li><li><a href="khoa-hoc.html?cat=fullstack">Fullstack</a></li><li><a href="khoa-hoc.html?cat=ai">AI / ML</a></li></ul></div></div>
+                <div class="col-lg-3 col-md-6"><div class="footer-contact"><h4>Liên hệ</h4><ul><li><i class="fas fa-map-marker-alt"></i> 123 Nguyễn Huệ, Q.1, TP.HCM</li><li><i class="fas fa-phone"></i> 0909 123 456</li><li><i class="fas fa-envelope"></i> contact@techlearn.vn</li></ul></div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 TechLearn. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <div id="modal-container"></div>
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <script src="../js/script.js" defer></script>
+</body>
+</html>

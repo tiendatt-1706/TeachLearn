@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog công nghệ - TechLearn</title>
+    <meta name="description" content="Cập nhật kiến thức lập trình, xu hướng công nghệ và tips hữu ích.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://code.jquery.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="fas fa-code"></i> <span>Tech<span class="brand-highlight">Learn</span></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"><span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span></button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="khoa-hoc.html"><i class="fas fa-graduation-cap"></i> Khóa học</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lo-trinh.html"><i class="fas fa-route"></i> Lộ trình</a></li>
+                    <li class="nav-item"><a class="nav-link" href="review.html"><i class="fas fa-star"></i> Review</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html"><i class="fas fa-circle-question"></i> FAQ</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-sign-in-alt"></i> Đăng nhập</button>
+                    <button class="btn btn-primary btn-sm btn-glow" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="fas fa-user-plus"></i> Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header page-header-blog">
+        <div class="page-header-bg"><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
+        <div class="container">
+            <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html"><i class="fas fa-home"></i> Trang chủ</a></li><li class="breadcrumb-item active">Blog</li></ol></nav>
+            <h1 class="page-header-title">Bài viết <span class="gradient-text">mới nhất</span></h1>
+            <p class="page-header-subtitle">Cập nhật kiến thức, xu hướng công nghệ và tips lập trình hữu ích</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="category-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-blog="all"><i class="fas fa-th-large"></i> Tất cả</button>
+                <button class="filter-btn" data-blog="frontend"><i class="fas fa-palette"></i> Frontend</button>
+                <button class="filter-btn" data-blog="backend"><i class="fas fa-server"></i> Backend</button>
+                <button class="filter-btn" data-blog="ai"><i class="fas fa-robot"></i> AI</button>
+                <button class="filter-btn" data-blog="career"><i class="fas fa-briefcase"></i> Career</button>
+                <button class="filter-btn" data-blog="tips"><i class="fas fa-lightbulb"></i> Tips</button>
+            </div>
+
+            <div class="blog-featured" data-aos="fade-up" data-blog-cat="frontend">
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="blog-featured-img" style="background: linear-gradient(135deg, #667eea, #764ba2);"><div class="blog-category">Frontend</div><i class="fab fa-react" style="font-size: 6rem; color: rgba(255,255,255,0.2);"></i></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="blog-featured-content">
+                            <div class="blog-meta"><span><i class="fas fa-calendar"></i> 20/03/2026</span><span><i class="fas fa-eye"></i> 2.5k</span><span><i class="fas fa-clock"></i> 8 phút</span></div>
+                            <h2>React 19 có gì mới? Tổng hợp những thay đổi quan trọng</h2>
+                            <p>Server Components, Actions, use() hook và nhiều cải tiến hiệu suất đáng chú ý. Tìm hiểu cách migrate dự án lên phiên bản mới nhất.</p>
+                            <a href="#" class="btn btn-primary btn-glow mt-3"><i class="fas fa-book-reader"></i> Đọc bài viết</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="col-lg-4 col-md-6 blog-col" data-blog-cat="career" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-card">
+                        <div class="blog-thumbnail" style="background: linear-gradient(135deg, #f093fb, #f5576c);"><div class="blog-category">Career</div><i class="fas fa-briefcase blog-icon"></i></div>
+                        <div class="blog-content">
+                            <div class="blog-meta"><span><i class="fas fa-calendar"></i> 18/03/2026</span><span><i class="fas fa-eye"></i> 4.1k</span></div>
+                            <h4>Lộ trình trở thành Fullstack Developer năm 2026</h4>
+                            <p>Hướng dẫn chi tiết từ A-Z để trở thành Fullstack Developer: kỹ năng, công nghệ, lương và cơ hội.</p>
+                            <a href="#" class="blog-readmore">Đọc thêm <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 blog-col" data-blog-cat="ai" data-aos="fade-up" data-aos-delay="150">
+                    <div class="blog-card">
+                        <div class="blog-thumbnail" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"><div class="blog-category">AI</div><i class="fas fa-brain blog-icon"></i></div>
+                        <div class="blog-content">
+                            <div class="blog-meta"><span><i class="fas fa-calendar"></i> 15/03/2026</span><span><i class="fas fa-eye"></i> 5.8k</span></div>
+                            <h4>AI trong phát triển phần mềm: Xu hướng không thể bỏ qua</h4>
+                            <p>Cách AI đang thay đổi ngành: code generation, testing tự động, kiến trúc AI-driven.</p>
+                            <a href="#" class="blog-readmore">Đọc thêm <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 blog-col" data-blog-cat="backend" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-card">
+                        <div class="blog-thumbnail" style="background: linear-gradient(135deg, #43e97b, #38f9d7);"><div class="blog-category">Backend</div><i class="fab fa-node-js blog-icon"></i></div>
+                        <div class="blog-content">
+                            <div class="blog-meta"><span><i class="fas fa-calendar"></i> 12/03/2026</span><span><i class="fas fa-eye"></i> 3.2k</span></div>
+                            <h4>So sánh Node.js vs Python: Nên chọn ngôn ngữ nào?</h4>
+                            <p>Phân tích ưu nhược điểm cho Backend Development, giúp bạn lựa chọn đúng cho dự án.</p>
+                            <a href="#" class="blog-readmore">Đọc thêm <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 blog-col" data-blog-cat="tips" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-card">
+                        <div class="blog-thumbnail" style="background: linear-gradient(135deg, #fa709a, #fee140);"><div class="blog-category">Tips</div><i class="fas fa-lightbulb blog-icon"></i></div>
+                        <div class="blog-content">
+                            <div class="blog-meta"><span><i class="fas fa-calendar"></i> 10/03/2026</span><span><i class="fas fa-eye"></i> 6.3k</span></div>
+                            <h4>10 thói quen giúp bạn code tốt hơn mỗi ngày</h4>
+                            <p>Clean code, code review, viết test, đọc mã nguồn mở — thói quen đơn giản nhưng hiệu quả.</p>
+                            <a href="#" class="blog-readmore">Đọc thêm <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 blog-col" data-blog-cat="backend" data-aos="fade-up" data-aos-delay="150">
+                    <div class="blog-card">
+                        <div class="blog-thumbnail" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);"><div class="blog-category">DevOps</div><i class="fab fa-docker blog-icon"></i></div>
+                        <div class="blog-content">
+                            <div class="blog-meta"><span><i class="fas fa-calendar"></i> 08/03/2026</span><span><i class="fas fa-eye"></i> 2.9k</span></div>
+                            <h4>Docker cho người mới: Hướng dẫn từ A-Z</h4>
+                            <p>Docker là gì, tại sao cần Docker, cách containerize ứng dụng và deploy lên cloud.</p>
+                            <a href="#" class="blog-readmore">Đọc thêm <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 blog-col" data-blog-cat="frontend" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-card">
+                        <div class="blog-thumbnail" style="background: linear-gradient(135deg, #667eea, #764ba2);"><div class="blog-category">Frontend</div><i class="fab fa-css3-alt blog-icon"></i></div>
+                        <div class="blog-content">
+                            <div class="blog-meta"><span><i class="fas fa-calendar"></i> 05/03/2026</span><span><i class="fas fa-eye"></i> 4.5k</span></div>
+                            <h4>CSS Grid vs Flexbox: Khi nào dùng cái nào?</h4>
+                            <p>Hướng dẫn khi nào dùng Flexbox, khi nào dùng Grid, và cách kết hợp hiệu quả nhất.</p>
+                            <a href="#" class="blog-readmore">Đọc thêm <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6"><div class="footer-brand"><h3><i class="fas fa-code"></i> Tech<span>Learn</span></h3><p>Nền tảng E-Learning hàng đầu Việt Nam.</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-github"></i></a></div></div></div>
+                <div class="col-lg-2 col-md-6"><div class="footer-links"><h4>Khám phá</h4><ul><li><a href="khoa-hoc.html">Khóa học</a></li><li><a href="lo-trinh.html">Lộ trình</a></li><li><a href="blog.html">Blog</a></li><li><a href="review.html">Review</a></li><li><a href="faq.html">FAQ</a></li></ul></div></div>
+                <div class="col-lg-3 col-md-6"><div class="footer-links"><h4>Danh mục</h4><ul><li><a href="khoa-hoc.html?cat=frontend">Frontend</a></li><li><a href="khoa-hoc.html?cat=backend">Backend</a></li><li><a href="khoa-hoc.html?cat=fullstack">Fullstack</a></li><li><a href="khoa-hoc.html?cat=ai">AI / ML</a></li></ul></div></div>
+                <div class="col-lg-3 col-md-6"><div class="footer-contact"><h4>Liên hệ</h4><ul><li><i class="fas fa-map-marker-alt"></i> 123 Nguyễn Huệ, Q.1, TP.HCM</li><li><i class="fas fa-phone"></i> 0909 123 456</li><li><i class="fas fa-envelope"></i> contact@techlearn.vn</li></ul></div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 TechLearn. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <div id="modal-container"></div>
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <script src="../js/script.js" defer></script>
+</body>
+</html>

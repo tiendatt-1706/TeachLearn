@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lộ trình học tập - TechLearn</title>
+    <meta name="description" content="Lộ trình học Frontend, Backend, Fullstack, AI - chọn con đường phù hợp nhất để trở thành developer chuyên nghiệp.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://code.jquery.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="fas fa-code"></i> <span>Tech<span class="brand-highlight">Learn</span></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"><span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span></button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="khoa-hoc.html"><i class="fas fa-graduation-cap"></i> Khóa học</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="lo-trinh.html"><i class="fas fa-route"></i> Lộ trình</a></li>
+                    <li class="nav-item"><a class="nav-link" href="review.html"><i class="fas fa-star"></i> Review</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html"><i class="fas fa-circle-question"></i> FAQ</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-sign-in-alt"></i> Đăng nhập</button>
+                    <button class="btn btn-primary btn-sm btn-glow" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="fas fa-user-plus"></i> Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="page-header-bg"><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
+        <div class="container">
+            <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html"><i class="fas fa-home"></i> Trang chủ</a></li><li class="breadcrumb-item active">Lộ trình</li></ol></nav>
+            <h1 class="page-header-title">Lộ trình <span class="gradient-text">học tập</span></h1>
+            <p class="page-header-subtitle">Chọn con đường phù hợp nhất để trở thành developer chuyên nghiệp</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="roadmap-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-roadmap="all"><i class="fas fa-th-large"></i> Tất cả</button>
+                <button class="filter-btn" data-roadmap="frontend"><i class="fas fa-palette"></i> Frontend</button>
+                <button class="filter-btn" data-roadmap="backend"><i class="fas fa-server"></i> Backend</button>
+                <button class="filter-btn" data-roadmap="fullstack"><i class="fas fa-code"></i> Fullstack</button>
+                <button class="filter-btn" data-roadmap="ai"><i class="fas fa-robot"></i> AI / ML</button>
+            </div>
+
+            <div class="row g-4">
+                <!-- FRONTEND -->
+                <div class="col-lg-6 roadmap-col" data-roadmap="frontend" data-aos="fade-up" data-aos-delay="100">
+                    <div class="roadmap-card roadmap-frontend">
+                        <div class="roadmap-icon"><i class="fas fa-palette"></i></div>
+                        <h3>Frontend Developer</h3>
+                        <p class="roadmap-desc">Xây dựng giao diện web đẹp mắt, responsive và tương tác mượt mà với các framework hiện đại.</p>
+                        <div class="roadmap-timeline">
+                            <div class="timeline-step completed"><div class="step-dot"></div><div class="step-content"><h5>Tháng 1-2: Nền tảng</h5><p>HTML, CSS, JavaScript cơ bản</p></div></div>
+                            <div class="timeline-step completed"><div class="step-dot"></div><div class="step-content"><h5>Tháng 3-4: JavaScript nâng cao</h5><p>ES6+, DOM, Async/Await, API</p></div></div>
+                            <div class="timeline-step"><div class="step-dot"></div><div class="step-content"><h5>Tháng 5-7: Framework</h5><p>React / Vue.js / Angular</p></div></div>
+                            <div class="timeline-step"><div class="step-dot"></div><div class="step-content"><h5>Tháng 8-9: Dự án thực tế</h5><p>Build portfolio, deploy project</p></div></div>
+                        </div>
+                        <div class="roadmap-meta"><span><i class="fas fa-clock"></i> 9 tháng</span><span><i class="fas fa-dollar-sign"></i> 15-30 triệu/tháng</span><span><i class="fas fa-briefcase"></i> Nhu cầu rất cao</span></div>
+                        <div class="roadmap-detail-section">
+                            <h4><i class="fas fa-bullseye"></i> Mục tiêu đầu ra</h4>
+                            <ul class="roadmap-goals">
+                                <li><i class="fas fa-check"></i> Thành thạo HTML5 semantic, CSS3, Flexbox, Grid</li>
+                                <li><i class="fas fa-check"></i> Master JavaScript ES6+ và ít nhất 1 framework</li>
+                                <li><i class="fas fa-check"></i> Build responsive, cross-browser websites</li>
+                                <li><i class="fas fa-check"></i> Có portfolio với 3-5 dự án thực tế</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BACKEND -->
+                <div class="col-lg-6 roadmap-col" data-roadmap="backend" data-aos="fade-up" data-aos-delay="200">
+                    <div class="roadmap-card roadmap-backend">
+                        <div class="roadmap-icon"><i class="fas fa-server"></i></div>
+                        <h3>Backend Developer</h3>
+                        <p class="roadmap-desc">Xây dựng server, API, database và xử lý logic phía sau để tạo nên hệ thống vững chắc.</p>
+                        <div class="roadmap-timeline">
+                            <div class="timeline-step completed"><div class="step-dot"></div><div class="step-content"><h5>Tháng 1-2: Nền tảng & ngôn ngữ</h5><p>JavaScript/Python, Git, Linux basics</p></div></div>
+                            <div class="timeline-step completed"><div class="step-dot"></div><div class="step-content"><h5>Tháng 3-4: Database & SQL</h5><p>MySQL/PostgreSQL, MongoDB, ORM</p></div></div>
+                            <div class="timeline-step"><div class="step-dot"></div><div class="step-content"><h5>Tháng 5-7: Framework & API</h5><p>Node.js/Django/Spring Boot, REST API</p></div></div>
+                            <div class="timeline-step"><div class="step-dot"></div><div class="step-content"><h5>Tháng 8-10: DevOps & Deploy</h5><p>Docker, CI/CD, Cloud (AWS/GCP)</p></div></div>
+                        </div>
+                        <div class="roadmap-meta"><span><i class="fas fa-clock"></i> 10 tháng</span><span><i class="fas fa-dollar-sign"></i> 18-35 triệu/tháng</span><span><i class="fas fa-briefcase"></i> Rất ổn định</span></div>
+                        <div class="roadmap-detail-section">
+                            <h4><i class="fas fa-bullseye"></i> Mục tiêu đầu ra</h4>
+                            <ul class="roadmap-goals">
+                                <li><i class="fas fa-check"></i> Xây dựng RESTful & GraphQL API</li>
+                                <li><i class="fas fa-check"></i> Thiết kế database chuyên nghiệp</li>
+                                <li><i class="fas fa-check"></i> Hiểu authentication, authorization, security</li>
+                                <li><i class="fas fa-check"></i> Deploy ứng dụng lên cloud</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FULLSTACK -->
+                <div class="col-lg-6 roadmap-col" data-roadmap="fullstack" data-aos="fade-up" data-aos-delay="100">
+                    <div class="roadmap-card roadmap-fullstack">
+                        <div class="roadmap-icon"><i class="fas fa-layer-group"></i></div>
+                        <h3>Fullstack Developer</h3>
+                        <p class="roadmap-desc">Làm chủ cả Frontend và Backend, xây dựng ứng dụng web hoàn chỉnh từ A đến Z.</p>
+                        <div class="roadmap-timeline">
+                            <div class="timeline-step completed"><div class="step-dot"></div><div class="step-content"><h5>Tháng 1-3: Frontend cơ bản</h5><p>HTML, CSS, JavaScript, React</p></div></div>
+                            <div class="timeline-step"><div class="step-dot"></div><div class="step-content"><h5>Tháng 4-6: Backend core</h5><p>Node.js, Express, Database</p></div></div>
+                            <div class="timeline-step"><div class="step-dot"></div><div class="step-content"><h5>Tháng 7-9: Fullstack project</h5><p>MERN/MEAN Stack, Authentication</p></div></div>
+                            <div class="timeline-step"><div class="step-dot"></div><div class="step-content"><h5>Tháng 10-12: Nâng cao</h5><p>DevOps, Testing, Performance</p></div></div>
+                        </div>
+                        <div class="roadmap-meta"><span><i class="fas fa-clock"></i> 12 tháng</span><span><i class="fas fa-dollar-sign"></i> 20-45 triệu/tháng</span><span><i class="fas fa-briefcase"></i> Versatile</span></div>
+                        <div class="roadmap-detail-section">
+                            <h4><i class="fas fa-bullseye"></i> Mục tiêu đầu ra</h4>
+                            <ul class="roadmap-goals">
+                                <li><i class="fas fa-check"></i> Build full-stack application end-to-end</li>
+                                <li><i class="fas fa-check"></i> Hiểu kiến trúc hệ thống tổng thể</li>
+                                <li><i class="fas fa-check"></i> Deploy và maintain production app</li>
+                                <li><i class="fas fa-check"></i> Có 2-3 dự án fullstack hoàn chỉnh</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI/ML -->
+                <div class="col-lg-6 roadmap-col" data-roadmap="ai" data-aos="fade-up" data-aos-delay="200">
+                    <div class="roadmap-card roadmap-ai">
+                        <div class="roadmap-icon"><i class="fas fa-brain"></i></div>
+                        <h3>AI / ML Engineer</h3>
+                        <p class="roadmap-desc">Xây dựng mô hình AI, phân tích dữ liệu và ứng dụng trí tuệ nhân tạo vào thực tế.</p>
+                        <div class="roadmap-timeline">
+                            <div class="timeline-step completed"><div class="step-dot"></div><div class="step-content"><h5>Tháng 1-2: Toán & Python</h5><p>Linear Algebra, Statistics, Python</p></div></div>
+                            <div class="timeline-step"><div class="step-dot"></div><div class="step-content"><h5>Tháng 3-5: Data Science</h5><p>Pandas, NumPy, Visualization</p></div></div>
+                            <div class="timeline-step"><div class="step-dot"></div><div class="step-content"><h5>Tháng 6-9: Machine Learning</h5><p>Scikit-learn, ML algorithms</p></div></div>
+                            <div class="timeline-step"><div class="step-dot"></div><div class="step-content"><h5>Tháng 10-12: Deep Learning</h5><p>TensorFlow, PyTorch, NLP, CV</p></div></div>
+                        </div>
+                        <div class="roadmap-meta"><span><i class="fas fa-clock"></i> 12 tháng</span><span><i class="fas fa-dollar-sign"></i> 25-60 triệu/tháng</span><span><i class="fas fa-briefcase"></i> Hot nhất 2026</span></div>
+                        <div class="roadmap-detail-section">
+                            <h4><i class="fas fa-bullseye"></i> Mục tiêu đầu ra</h4>
+                            <ul class="roadmap-goals">
+                                <li><i class="fas fa-check"></i> Thành thạo Python cho Data Science</li>
+                                <li><i class="fas fa-check"></i> Build và train ML/DL models</li>
+                                <li><i class="fas fa-check"></i> Deploy AI models vào production</li>
+                                <li><i class="fas fa-check"></i> Hiểu NLP, Computer Vision, LLM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="roadmap-comparison" data-aos="fade-up">
+                <h3 class="text-center mb-4">So sánh <span class="gradient-text">các lộ trình</span></h3>
+                <div class="table-responsive">
+                    <table class="table comparison-table">
+                        <thead><tr><th>Tiêu chí</th><th>Frontend</th><th>Backend</th><th>Fullstack</th><th>AI / ML</th></tr></thead>
+                        <tbody>
+                            <tr><td>Thời gian</td><td>9 tháng</td><td>10 tháng</td><td>12 tháng</td><td>12 tháng</td></tr>
+                            <tr><td>Lương khởi điểm</td><td>15-20 tr</td><td>18-25 tr</td><td>20-30 tr</td><td>25-35 tr</td></tr>
+                            <tr><td>Lương Senior</td><td>30-50 tr</td><td>35-60 tr</td><td>40-70 tr</td><td>50-100 tr</td></tr>
+                            <tr><td>Độ khó</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+                            <tr><td>Nhu cầu tuyển dụng</td><td>Rất cao</td><td>Cao</td><td>Rất cao</td><td>Cao nhất</td></tr>
+                            <tr><td>Phù hợp với</td><td>Sáng tạo</td><td>Logic</td><td>Đa năng</td><td>Nghiên cứu</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Sẵn sàng bắt đầu lộ trình của bạn?</h2>
+                <p>Đăng ký ngay để nhận tư vấn lộ trình miễn phí!</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="fas fa-rocket"></i> Đăng ký ngay</button>
+                    <a href="khoa-hoc.html" class="btn btn-outline-light btn-lg"><i class="fas fa-graduation-cap"></i> Xem khóa học</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6"><div class="footer-brand"><h3><i class="fas fa-code"></i> Tech<span>Learn</span></h3><p>Nền tảng E-Learning hàng đầu Việt Nam.</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-github"></i></a></div></div></div>
+                <div class="col-lg-2 col-md-6"><div class="footer-links"><h4>Khám phá</h4><ul><li><a href="khoa-hoc.html">Khóa học</a></li><li><a href="lo-trinh.html">Lộ trình</a></li><li><a href="blog.html">Blog</a></li><li><a href="review.html">Review</a></li><li><a href="faq.html">FAQ</a></li></ul></div></div>
+                <div class="col-lg-3 col-md-6"><div class="footer-links"><h4>Danh mục</h4><ul><li><a href="khoa-hoc.html?cat=frontend">Frontend</a></li><li><a href="khoa-hoc.html?cat=backend">Backend</a></li><li><a href="khoa-hoc.html?cat=fullstack">Fullstack</a></li><li><a href="khoa-hoc.html?cat=ai">AI / ML</a></li></ul></div></div>
+                <div class="col-lg-3 col-md-6"><div class="footer-contact"><h4>Liên hệ</h4><ul><li><i class="fas fa-map-marker-alt"></i> 123 Nguyễn Huệ, Q.1, TP.HCM</li><li><i class="fas fa-phone"></i> 0909 123 456</li><li><i class="fas fa-envelope"></i> contact@techlearn.vn</li></ul></div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 TechLearn. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <div id="modal-container"></div>
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <script src="../js/script.js" defer></script>
+</body>
+</html>

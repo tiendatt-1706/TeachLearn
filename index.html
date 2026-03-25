@@ -1,0 +1,1531 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TechLearn - Nền tảng học lập trình hàng đầu Việt Nam</title>
+        <meta
+            name="description"
+            content="TechLearn - Học lập trình Frontend, Backend, Fullstack, AI với các khóa học chất lượng cao. Hơn 10,000+ học viên tin dùng."
+        />
+        
+        <!-- Preconnect to external domains for faster LCP -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link rel="preconnect" href="https://code.jquery.com" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <!-- Font Awesome 6 -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            rel="stylesheet"
+        />
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- AOS Animation -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+            rel="stylesheet"
+        />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <body>
+        <!-- ============ NAVBAR ============ -->
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-code"></i>
+                    <span>Tech<span class="brand-highlight">Learn</span></span>
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent"
+                >
+                    <span class="navbar-toggler-icon"
+                        ><i class="fas fa-bars"></i
+                    ></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html"
+                                ><i class="fas fa-home"></i> Trang chủ</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/khoa-hoc.html"
+                                ><i class="fas fa-graduation-cap"></i> Khóa
+                                học</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/lo-trinh.html"
+                                ><i class="fas fa-route"></i> Lộ trình</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/review.html"
+                                ><i class="fas fa-star"></i> Review</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/blog.html"
+                                ><i class="fas fa-blog"></i> Blog</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/faq.html"
+                                ><i class="fas fa-circle-question"></i> FAQ</a
+                            >
+                        </li>
+                    </ul>
+                    <div class="nav-auth">
+                        <button
+                            class="btn btn-outline-light btn-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#loginModal"
+                            id="btnLogin"
+                        >
+                            <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                        </button>
+                        <button
+                            class="btn btn-primary btn-sm btn-glow"
+                            data-bs-toggle="modal"
+                            data-bs-target="#registerModal"
+                            id="btnRegister"
+                        >
+                            <i class="fas fa-user-plus"></i> Đăng ký
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ============ HERO SECTION ============ -->
+        <section class="hero-section" id="hero">
+            <div class="hero-bg"><div class="hero-particle"></div><div class="hero-particle"></div><div class="hero-particle"></div><div class="hero-particle"></div><div class="hero-particle"></div></div>
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="hero-content">
+                            <div class="hero-badge"><i class="fas fa-fire"></i> #1 Nền tảng E-Learning IT tại Việt Nam</div>
+                            <h1>Nâng tầm <span class="gradient-text">kỹ năng lập trình</span> của bạn lên tầm cao mới</h1>
+                            <p class="hero-desc">Khám phá hơn 50+ khóa học chất lượng cao từ Frontend, Backend, Fullstack đến AI. Được giảng dạy bởi các chuyên gia hàng đầu trong ngành công nghệ.</p>
+                            <div class="hero-search"><div class="search-wrapper"><i class="fas fa-search"></i><input type="text" id="heroSearch" placeholder="Tìm kiếm khóa học..." /><button class="btn btn-primary" id="btnHeroSearch">Tìm kiếm</button></div></div>
+                            <div class="hero-stats">
+                                <div class="stat-item"><span class="stat-number" data-count="10000">0</span><span class="stat-label">Học viên</span></div>
+                                <div class="stat-item"><span class="stat-number" data-count="50">0</span><span class="stat-label">Khóa học</span></div>
+                                <div class="stat-item"><span class="stat-number" data-count="20">0</span><span class="stat-label">Giảng viên</span></div>
+                                <div class="stat-item"><span class="stat-number" data-count="98">0</span><span class="stat-label">% Hài lòng</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-block" data-aos="fade-left">
+                        <div class="hero-visual">
+                            <div class="code-window">
+                                <div class="code-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-title">app.js</span></div>
+                                <pre class="code-body"><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">"Bạn"</span>,
+  <span class="code-property">skills</span>: [<span class="code-string">"HTML"</span>, <span class="code-string">"CSS"</span>, <span class="code-string">"JS"</span>],
+  <span class="code-property">level</span>: <span class="code-string">"Đang học..."</span>
+};
+
+<span class="code-keyword">function</span> <span class="code-function">startLearning</span>() {
+  developer.<span class="code-property">level</span> = <span class="code-string">"Expert"</span>;
+  <span class="code-keyword">return</span> <span class="code-string">"🚀 Ready!"</span>;
+}</code></pre>
+                            </div>
+                            <div class="floating-badge badge-1"><i class="fab fa-react"></i> React</div>
+                            <div class="floating-badge badge-2"><i class="fab fa-python"></i> Python</div>
+                            <div class="floating-badge badge-3"><i class="fab fa-node-js"></i> Node.js</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ COURSES SECTION ============ -->
+        <section id="courses" class="courses-section section-padding">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-badge"
+                        ><i class="fas fa-book-open"></i> Khóa học</span
+                    >
+                    <h2 class="section-title">
+                        Khám phá các
+                        <span class="gradient-text">khóa học</span> của chúng
+                        tôi
+                    </h2>
+                    <p class="section-subtitle">
+                        Lựa chọn từ hơn 50+ khóa học chất lượng cao, được thiết
+                        kế bởi các chuyên gia hàng đầu
+                    </p>
+                </div>
+
+                <!-- Category Filter Tabs -->
+                <div
+                    class="category-filter"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
+                    <button class="filter-btn active" data-category="all">
+                        <i class="fas fa-th-large"></i> Tất cả
+                    </button>
+                    <button class="filter-btn" data-category="frontend">
+                        <i class="fas fa-palette"></i> Frontend
+                    </button>
+                    <button class="filter-btn" data-category="backend">
+                        <i class="fas fa-server"></i> Backend
+                    </button>
+                    <button class="filter-btn" data-category="fullstack">
+                        <i class="fas fa-layer-group"></i> Fullstack
+                    </button>
+                    <button class="filter-btn" data-category="ai">
+                        <i class="fas fa-robot"></i> AI / ML
+                    </button>
+                    <button class="filter-btn" data-category="basic">
+                        <i class="fas fa-cubes"></i> Nền tảng
+                    </button>
+                </div>
+
+                <!-- Course Grid -->
+                <div class="row g-4" id="courseGrid">
+                    <!-- Courses rendered by JavaScript -->
+                </div>
+
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <button
+                        class="btn btn-outline-primary btn-lg"
+                        id="loadMoreCourses"
+                    >
+                        <i class="fas fa-plus-circle"></i> Xem thêm khóa học
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ROADMAP / LỘ TRÌNH ============ -->
+        <section id="roadmap" class="roadmap-section section-padding">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-badge"
+                        ><i class="fas fa-route"></i> Lộ trình</span
+                    >
+                    <h2 class="section-title">
+                        Lộ trình học tập
+                        <span class="gradient-text">chuyên nghiệp</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Theo các lộ trình đã được thiết kế sẵn để đạt được mục
+                        tiêu nghề nghiệp nhanh nhất
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Frontend Roadmap -->
+                    <div
+                        class="col-lg-6"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div class="roadmap-card roadmap-frontend">
+                            <div class="roadmap-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3>Frontend Developer</h3>
+                            <p class="roadmap-desc">
+                                Thành thạo xây dựng giao diện web hiện đại,
+                                responsive và tối ưu trải nghiệm người dùng.
+                            </p>
+                            <div class="roadmap-timeline">
+                                <div class="timeline-step completed">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 1-2</h5>
+                                        <p>HTML5, CSS3, Responsive Design</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step completed">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 3-4</h5>
+                                        <p>JavaScript ES6+, DOM, API</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 5-6</h5>
+                                        <p>React / Vue.js Framework</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 7-8</h5>
+                                        <p>TypeScript, Testing, Deploy</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="roadmap-meta">
+                                <span
+                                    ><i class="fas fa-clock"></i> 8 tháng</span
+                                >
+                                <span
+                                    ><i class="fas fa-book"></i> 12 khóa
+                                    học</span
+                                >
+                                <span
+                                    ><i class="fas fa-briefcase"></i> Junior -
+                                    Middle</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend Roadmap -->
+                    <div
+                        class="col-lg-6"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div class="roadmap-card roadmap-backend">
+                            <div class="roadmap-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Backend Developer</h3>
+                            <p class="roadmap-desc">
+                                Xây dựng hệ thống server, API, database mạnh mẽ
+                                và có khả năng mở rộng cao.
+                            </p>
+                            <div class="roadmap-timeline">
+                                <div class="timeline-step completed">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 1-2</h5>
+                                        <p>Python / Node.js cơ bản</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step completed">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 3-4</h5>
+                                        <p>Database SQL & NoSQL</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 5-7</h5>
+                                        <p>
+                                            REST API, Authentication, Security
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 8-10</h5>
+                                        <p>Docker, CI/CD, Cloud Deploy</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="roadmap-meta">
+                                <span
+                                    ><i class="fas fa-clock"></i> 10 tháng</span
+                                >
+                                <span
+                                    ><i class="fas fa-book"></i> 14 khóa
+                                    học</span
+                                >
+                                <span
+                                    ><i class="fas fa-briefcase"></i> Junior -
+                                    Senior</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fullstack Roadmap -->
+                    <div
+                        class="col-lg-6"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                    >
+                        <div class="roadmap-card roadmap-fullstack">
+                            <div class="roadmap-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h3>Fullstack Developer</h3>
+                            <p class="roadmap-desc">
+                                Trở thành lập trình viên toàn diện, thành thạo
+                                cả Frontend lẫn Backend.
+                            </p>
+                            <div class="roadmap-timeline">
+                                <div class="timeline-step completed">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 1-3</h5>
+                                        <p>HTML, CSS, JavaScript nâng cao</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 4-6</h5>
+                                        <p>React + Node.js / Next.js</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 7-9</h5>
+                                        <p>Database, API, Authentication</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 10-12</h5>
+                                        <p>DevOps, Testing, Portfolio</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="roadmap-meta">
+                                <span
+                                    ><i class="fas fa-clock"></i> 12 tháng</span
+                                >
+                                <span
+                                    ><i class="fas fa-book"></i> 20 khóa
+                                    học</span
+                                >
+                                <span
+                                    ><i class="fas fa-briefcase"></i> Junior -
+                                    Senior</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Roadmap -->
+                    <div
+                        class="col-lg-6"
+                        data-aos="fade-up"
+                        data-aos-delay="400"
+                    >
+                        <div class="roadmap-card roadmap-ai">
+                            <div class="roadmap-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3>AI / ML Engineer</h3>
+                            <p class="roadmap-desc">
+                                Bước vào thế giới trí tuệ nhân tạo, từ nền tảng
+                                toán học đến ứng dụng thực tế.
+                            </p>
+                            <div class="roadmap-timeline">
+                                <div class="timeline-step completed">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 1-2</h5>
+                                        <p>Python, Toán cho ML</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 3-5</h5>
+                                        <p>Machine Learning cơ bản</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 6-9</h5>
+                                        <p>Deep Learning, NLP, CV</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step">
+                                    <div class="step-dot"></div>
+                                    <div class="step-content">
+                                        <h5>Tháng 10-12</h5>
+                                        <p>MLOps, Production Deploy</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="roadmap-meta">
+                                <span
+                                    ><i class="fas fa-clock"></i> 12 tháng</span
+                                >
+                                <span
+                                    ><i class="fas fa-book"></i> 10 khóa
+                                    học</span
+                                >
+                                <span
+                                    ><i class="fas fa-briefcase"></i> Fresher -
+                                    Senior</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ REVIEWS SECTION ============ -->
+        <section id="reviews" class="reviews-section section-padding">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-badge"
+                        ><i class="fas fa-star"></i> Review</span
+                    >
+                    <h2 class="section-title">
+                        Học viên nói gì về
+                        <span class="gradient-text">TechLearn</span>?
+                    </h2>
+                    <p class="section-subtitle">
+                        Hơn 10,000+ học viên đã tin tưởng và đạt được kết quả
+                        tuyệt vời
+                    </p>
+                </div>
+
+                <div
+                    class="reviews-slider"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="review-card">
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i>
+                                </div>
+                                <p class="review-text">
+                                    "Khóa học ReactJS rất chi tiết và dễ hiểu.
+                                    Sau 3 tháng học, mình đã tự tay xây dựng
+                                    được ứng dụng web hoàn chỉnh và nhận được
+                                    offer từ công ty top."
+                                </p>
+                                <div class="review-author">
+                                    <div
+                                        class="author-avatar"
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #667eea,
+                                                #764ba2
+                                            );
+                                        "
+                                    >
+                                        NT
+                                    </div>
+                                    <div class="author-info">
+                                        <h5>Nguyễn Thanh</h5>
+                                        <p>
+                                            Frontend Developer tại FPT Software
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="review-card">
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i>
+                                </div>
+                                <p class="review-text">
+                                    "Ban đầu mình không biết gì về lập trình.
+                                    Nhờ lộ trình Fullstack của TechLearn, giờ
+                                    mình đã làm việc ở vị trí Fullstack
+                                    Developer được 1 năm rồi!"
+                                </p>
+                                <div class="review-author">
+                                    <div
+                                        class="author-avatar"
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #f093fb,
+                                                #f5576c
+                                            );
+                                        "
+                                    >
+                                        LM
+                                    </div>
+                                    <div class="author-info">
+                                        <h5>Lê Mai</h5>
+                                        <p>Fullstack Developer tại VNG</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="review-card">
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="review-text">
+                                    "Khóa Machine Learning giúp mình hiểu sâu về
+                                    thuật toán và ứng dụng thực tế. Giảng viên
+                                    rất tận tâm, luôn giải đáp thắc mắc 24/7."
+                                </p>
+                                <div class="review-author">
+                                    <div
+                                        class="author-avatar"
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #4facfe,
+                                                #00f2fe
+                                            );
+                                        "
+                                    >
+                                        PH
+                                    </div>
+                                    <div class="author-info">
+                                        <h5>Phạm Hoàng</h5>
+                                        <p>AI Engineer tại Zalo AI</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="review-card">
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i>
+                                </div>
+                                <p class="review-text">
+                                    "Mình rất thích cách giảng dạy trực quan.
+                                    Khóa Node.js đã giúp mình xây dựng được REST
+                                    API cho dự án startup của mình thành công."
+                                </p>
+                                <div class="review-author">
+                                    <div
+                                        class="author-avatar"
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #43e97b,
+                                                #38f9d7
+                                            );
+                                        "
+                                    >
+                                        TL
+                                    </div>
+                                    <div class="author-info">
+                                        <h5>Trần Linh</h5>
+                                        <p>Backend Developer & Co-founder</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="review-card">
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i>
+                                </div>
+                                <p class="review-text">
+                                    "Từ một sinh viên mới ra trường, nhờ khóa
+                                    học Git, Linux và Thuật toán, mình đã pass
+                                    phỏng vấn vòng kỹ thuật tại nhiều công ty
+                                    lớn."
+                                </p>
+                                <div class="review-author">
+                                    <div
+                                        class="author-avatar"
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #fa709a,
+                                                #fee140
+                                            );
+                                        "
+                                    >
+                                        VD
+                                    </div>
+                                    <div class="author-info">
+                                        <h5>Vũ Duy</h5>
+                                        <p>Software Engineer tại Shopee</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="review-card">
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star"></i
+                                    ><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="review-text">
+                                    "Khóa Vue.js rất hữu ích! Code demo thực tế,
+                                    bài tập phong phú. Sau khóa học mình đã tự
+                                    tin nhận project freelance đầu tiên."
+                                </p>
+                                <div class="review-author">
+                                    <div
+                                        class="author-avatar"
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #a18cd1,
+                                                #fbc2eb
+                                            );
+                                        "
+                                    >
+                                        HT
+                                    </div>
+                                    <div class="author-info">
+                                        <h5>Huỳnh Trang</h5>
+                                        <p>Freelance Frontend Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ BLOG SECTION ============ -->
+        <section id="blog" class="blog-section section-padding">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-badge"
+                        ><i class="fas fa-blog"></i> Blog</span
+                    >
+                    <h2 class="section-title">
+                        Bài viết <span class="gradient-text">mới nhất</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Cập nhật kiến thức, xu hướng công nghệ và tips lập trình
+                        hữu ích
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <div
+                        class="col-lg-4 col-md-6"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div class="blog-card">
+                            <div
+                                class="blog-thumbnail"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #667eea,
+                                        #764ba2
+                                    );
+                                "
+                            >
+                                <div class="blog-category">Frontend</div>
+                                <i class="fab fa-react blog-icon"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span
+                                        ><i class="fas fa-calendar"></i>
+                                        20/03/2026</span
+                                    >
+                                    <span
+                                        ><i class="fas fa-eye"></i> 2.5k lượt
+                                        xem</span
+                                    >
+                                </div>
+                                <h4>
+                                    React 19 có gì mới? Tổng hợp những thay đổi
+                                    quan trọng
+                                </h4>
+                                <p>
+                                    Khám phá những tính năng mới trong React 19:
+                                    Server Components, Actions, use() hook và
+                                    nhiều cải tiến hiệu suất đáng chú ý...
+                                </p>
+                                <a href="#" class="blog-readmore"
+                                    >Đọc thêm <i class="fas fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-4 col-md-6"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div class="blog-card">
+                            <div
+                                class="blog-thumbnail"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #f093fb,
+                                        #f5576c
+                                    );
+                                "
+                            >
+                                <div class="blog-category">Career</div>
+                                <i class="fas fa-briefcase blog-icon"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span
+                                        ><i class="fas fa-calendar"></i>
+                                        18/03/2026</span
+                                    >
+                                    <span
+                                        ><i class="fas fa-eye"></i> 4.1k lượt
+                                        xem</span
+                                    >
+                                </div>
+                                <h4>
+                                    Lộ trình trở thành Fullstack Developer năm
+                                    2026
+                                </h4>
+                                <p>
+                                    Hướng dẫn chi tiết từ A-Z để trở thành
+                                    Fullstack Developer: kỹ năng cần thiết, công
+                                    nghệ nên học, mức lương và cơ hội việc
+                                    làm...
+                                </p>
+                                <a href="#" class="blog-readmore"
+                                    >Đọc thêm <i class="fas fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-4 col-md-6"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                    >
+                        <div class="blog-card">
+                            <div
+                                class="blog-thumbnail"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #4facfe,
+                                        #00f2fe
+                                    );
+                                "
+                            >
+                                <div class="blog-category">AI</div>
+                                <i class="fas fa-brain blog-icon"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span
+                                        ><i class="fas fa-calendar"></i>
+                                        15/03/2026</span
+                                    >
+                                    <span
+                                        ><i class="fas fa-eye"></i> 5.8k lượt
+                                        xem</span
+                                    >
+                                </div>
+                                <h4>
+                                    AI trong phát triển phần mềm: Xu hướng không
+                                    thể bỏ qua
+                                </h4>
+                                <p>
+                                    Tìm hiểu cách AI đang thay đổi ngành phát
+                                    triển phần mềm: từ code generation, testing
+                                    tự động đến kiến trúc AI-driven...
+                                </p>
+                                <a href="#" class="blog-readmore"
+                                    >Đọc thêm <i class="fas fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-4 col-md-6"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div class="blog-card">
+                            <div
+                                class="blog-thumbnail"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #43e97b,
+                                        #38f9d7
+                                    );
+                                "
+                            >
+                                <div class="blog-category">Backend</div>
+                                <i class="fab fa-node-js blog-icon"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span
+                                        ><i class="fas fa-calendar"></i>
+                                        12/03/2026</span
+                                    >
+                                    <span
+                                        ><i class="fas fa-eye"></i> 3.2k lượt
+                                        xem</span
+                                    >
+                                </div>
+                                <h4>
+                                    So sánh Node.js vs Python: Nên chọn ngôn ngữ
+                                    nào?
+                                </h4>
+                                <p>
+                                    Phân tích ưu nhược điểm của Node.js và
+                                    Python cho Backend Development, giúp bạn lựa
+                                    chọn đúng đắn cho dự án của mình...
+                                </p>
+                                <a href="#" class="blog-readmore"
+                                    >Đọc thêm <i class="fas fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-4 col-md-6"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div class="blog-card">
+                            <div
+                                class="blog-thumbnail"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #fa709a,
+                                        #fee140
+                                    );
+                                "
+                            >
+                                <div class="blog-category">Tips</div>
+                                <i class="fas fa-lightbulb blog-icon"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span
+                                        ><i class="fas fa-calendar"></i>
+                                        10/03/2026</span
+                                    >
+                                    <span
+                                        ><i class="fas fa-eye"></i> 6.3k lượt
+                                        xem</span
+                                    >
+                                </div>
+                                <h4>
+                                    10 thói quen giúp bạn code tốt hơn mỗi ngày
+                                </h4>
+                                <p>
+                                    Những thói quen đơn giản nhưng hiệu quả giúp
+                                    cải thiện kỹ năng lập trình: clean code,
+                                    code review, viết test, đọc mã nguồn mở...
+                                </p>
+                                <a href="#" class="blog-readmore"
+                                    >Đọc thêm <i class="fas fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-4 col-md-6"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                    >
+                        <div class="blog-card">
+                            <div
+                                class="blog-thumbnail"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #a18cd1,
+                                        #fbc2eb
+                                    );
+                                "
+                            >
+                                <div class="blog-category">DevOps</div>
+                                <i class="fab fa-docker blog-icon"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span
+                                        ><i class="fas fa-calendar"></i>
+                                        08/03/2026</span
+                                    >
+                                    <span
+                                        ><i class="fas fa-eye"></i> 2.9k lượt
+                                        xem</span
+                                    >
+                                </div>
+                                <h4>
+                                    Docker cho người mới bắt đầu: Hướng dẫn từ
+                                    A-Z
+                                </h4>
+                                <p>
+                                    Hiểu rõ Docker là gì, tại sao cần Docker,
+                                    cách containerize ứng dụng và deploy lên
+                                    cloud với Docker Compose...
+                                </p>
+                                <a href="#" class="blog-readmore"
+                                    >Đọc thêm <i class="fas fa-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FAQ SECTION ============ -->
+        <section id="faq" class="faq-section section-padding">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-badge"
+                        ><i class="fas fa-circle-question"></i> FAQ</span
+                    >
+                    <h2 class="section-title">
+                        Câu hỏi <span class="gradient-text">thường gặp</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Giải đáp những thắc mắc phổ biến nhất của học viên
+                    </p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div
+                        class="col-lg-8"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div class="accordion faq-accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1"><i class="fas fa-circle-question faq-icon"></i> Tôi chưa biết gì về lập trình, có thể bắt đầu từ đâu?</button></h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Hoàn toàn có thể! Bạn nên bắt đầu với khóa học <strong>"Nền tảng cơ bản"</strong> gồm HTML, CSS và JavaScript. Các khóa học được thiết kế từ zero, phù hợp cho người mới hoàn toàn. Sau đó, bạn có thể theo lộ trình Frontend hoặc Backend tùy sở thích.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2"><i class="fas fa-circle-question faq-icon"></i> Thời gian học mỗi khóa là bao lâu?</button></h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Mỗi khóa học có thời lượng từ <strong>20 đến 60 giờ</strong> bài giảng video. Bạn có thể học theo tốc độ của riêng mình, không giới hạn thời gian. Trung bình, học viên hoàn thành một khóa trong <strong>4-8 tuần</strong> nếu học 1-2 giờ mỗi ngày.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3"><i class="fas fa-circle-question faq-icon"></i> Tôi có được hỗ trợ khi gặp khó khăn không?</button></h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Có! Mỗi khóa học đều có <strong>nhóm hỗ trợ riêng</strong> trên Discord/Telegram. Giảng viên và mentor sẽ giải đáp thắc mắc trong vòng <strong>24 giờ</strong>. Ngoài ra còn có các buổi livestream Q&A hàng tuần để giải đáp trực tiếp.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4"><i class="fas fa-circle-question faq-icon"></i> Khóa học có cấp chứng chỉ không?</button></h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Có! Khi hoàn thành khóa học và bài kiểm tra cuối khóa, bạn sẽ nhận được <strong>chứng chỉ hoàn thành</strong> từ TechLearn. Chứng chỉ có thể thêm vào LinkedIn và CV để tăng giá trị hồ sơ xin việc.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5"><i class="fas fa-circle-question faq-icon"></i> Chính sách hoàn tiền như thế nào?</button></h2>
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Chúng tôi cam kết <strong>hoàn tiền 100% trong 7 ngày</strong> nếu bạn không hài lòng với khóa học. Không cần lý do, không rắc rối. Đơn giản liên hệ support và chúng tôi sẽ xử lý trong <strong>24-48 giờ</strong>.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6"><i class="fas fa-circle-question faq-icon"></i> Có thể học trên điện thoại không?</button></h2>
+                                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Có! Website được tối ưu <strong>responsive</strong> cho mọi thiết bị. Bạn có thể xem video bài giảng, đọc tài liệu trên điện thoại hoặc tablet. Tuy nhiên, để thực hành code, chúng tôi khuyến khích sử dụng máy tính.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7"><i class="fas fa-circle-question faq-icon"></i> Tôi nên chọn Frontend hay Backend?</button></h2>
+                                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body"><strong>Frontend</strong> phù hợp nếu bạn thích thiết kế, giao diện và tương tác trực quan. <strong>Backend</strong> phù hợp nếu bạn thích logic, xử lý dữ liệu và hệ thống. Nếu chưa chắc chắn, hãy thử cả hai với khóa Nền tảng cơ bản trước, sau đó quyết định!</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8"><i class="fas fa-circle-question faq-icon"></i> Có hỗ trợ việc làm sau khi học xong không?</button></h2>
+                                <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Có! TechLearn có chương trình <strong>Career Support</strong> gồm: review CV, mock interview, kết nối với 100+ doanh nghiệp đối tác. Hơn <strong>85% học viên</strong> hoàn thành lộ trình đã tìm được việc làm IT trong vòng 3 tháng.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CTA SECTION ============ -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content" data-aos="zoom-in">
+                    <h2>Sẵn sàng bắt đầu hành trình lập trình?</h2>
+                    <p>
+                        Đăng ký miễn phí ngay hôm nay và nhận ưu đãi
+                        <strong>giảm 30%</strong> cho khóa học đầu tiên!
+                    </p>
+                    <div class="cta-buttons">
+                        <button
+                            class="btn btn-light btn-lg"
+                            data-bs-toggle="modal"
+                            data-bs-target="#registerModal"
+                        >
+                            <i class="fas fa-rocket"></i> Đăng ký miễn phí
+                        </button>
+                        <a href="#courses" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-play-circle"></i> Xem khóa học
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-brand">
+                            <h3>
+                                <i class="fas fa-code"></i> Tech<span
+                                    >Learn</span
+                                >
+                            </h3>
+                            <p>
+                                Nền tảng E-Learning hàng đầu Việt Nam, chuyên
+                                đào tạo lập trình và công nghệ thông tin với
+                                phương pháp giảng dạy hiện đại.
+                            </p>
+                            <div class="footer-social">
+                                <a href="#"
+                                    ><i class="fab fa-facebook-f"></i
+                                ></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-tiktok"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-discord"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links">
+                            <h4>Khám phá</h4>
+                            <ul>
+                                <li><a href="#courses">Khóa học</a></li>
+                                <li><a href="#roadmap">Lộ trình</a></li>
+                                <li><a href="#blog">Blog</a></li>
+                                <li><a href="#reviews">Review</a></li>
+                                <li><a href="#faq">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-links">
+                            <h4>Danh mục</h4>
+                            <ul>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="footer-category"
+                                        data-category="frontend"
+                                        >Frontend Development</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="footer-category"
+                                        data-category="backend"
+                                        >Backend Development</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="footer-category"
+                                        data-category="fullstack"
+                                        >Fullstack Development</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="footer-category"
+                                        data-category="ai"
+                                        >AI / Machine Learning</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="footer-category"
+                                        data-category="basic"
+                                        >Nền tảng cơ bản</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact">
+                            <h4>Liên hệ</h4>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i> 123
+                                    Nguyễn Huệ, Quận 1, TP.HCM
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone"></i> 0909 123 456
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    contact@techlearn.vn
+                                </li>
+                                <li>
+                                    <i class="fas fa-clock"></i> T2-T7: 8:00 -
+                                    22:00
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2026 TechLearn. All rights reserved. Made with
+                        <i class="fas fa-heart"></i> in Vietnam
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ============ LOGIN MODAL ============ -->
+        <div class="modal fade" id="loginModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content auth-modal">
+                    <div class="modal-header">
+                        <div class="modal-icon">
+                            <i class="fas fa-sign-in-alt"></i>
+                        </div>
+                        <h5 class="modal-title">Đăng nhập</h5>
+                        <button
+                            type="button"
+                            class="btn-close btn-close-white"
+                            data-bs-dismiss="modal"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginForm" novalidate>
+                            <div class="mb-3">
+                                <label class="form-label"
+                                    ><i class="fas fa-envelope"></i>
+                                    Email</label
+                                >
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="loginEmail"
+                                    placeholder="Nhập email của bạn"
+                                    required
+                                />
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập email hợp lệ
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label"
+                                    ><i class="fas fa-lock"></i> Mật khẩu</label
+                                >
+                                <div class="password-input">
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="loginPassword"
+                                        placeholder="Nhập mật khẩu"
+                                        required
+                                        minlength="6"
+                                    />
+                                    <button
+                                        type="button"
+                                        class="toggle-password"
+                                    >
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Mật khẩu phải có ít nhất 6 ký tự
+                                </div>
+                            </div>
+                            <div
+                                class="d-flex justify-content-between align-items-center mb-3"
+                            >
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="rememberMe"
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="rememberMe"
+                                        >Ghi nhớ đăng nhập</label
+                                    >
+                                </div>
+                                <a href="#" class="forgot-password"
+                                    >Quên mật khẩu?</a
+                                >
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100 btn-glow"
+                            >
+                                <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                            </button>
+                        </form>
+                        <!-- <div class="auth-divider">
+                            <span>hoặc đăng nhập với</span>
+                        </div> -->
+                        <div class="social-login">
+                            <button class="btn btn-google">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button class="btn btn-facebook">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </button>
+                        </div>
+                        <div class="auth-switch">
+                            Chưa có tài khoản?
+                            <a href="#" id="switchToRegister">Đăng ký ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ REGISTER MODAL ============ -->
+        <div class="modal fade" id="registerModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content auth-modal">
+                    <div class="modal-header">
+                        <div class="modal-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h5 class="modal-title">Đăng ký tài khoản</h5>
+                        <button
+                            type="button"
+                            class="btn-close btn-close-white"
+                            data-bs-dismiss="modal"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="registerForm" novalidate>
+                            <div class="mb-3">
+                                <label class="form-label"
+                                    ><i class="fas fa-user"></i> Họ và
+                                    tên</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="registerName"
+                                    placeholder="Nhập họ và tên"
+                                    required
+                                    minlength="2"
+                                />
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập họ tên (ít nhất 2 ký tự)
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label"
+                                    ><i class="fas fa-envelope"></i>
+                                    Email</label
+                                >
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="registerEmail"
+                                    placeholder="Nhập email của bạn"
+                                    required
+                                />
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập email hợp lệ
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label"
+                                    ><i class="fas fa-phone"></i> Số điện
+                                    thoại</label
+                                >
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="registerPhone"
+                                    placeholder="Nhập số điện thoại"
+                                    required
+                                    pattern="^0[0-9]{9}$"
+                                />
+                                <div class="invalid-feedback">
+                                    Số điện thoại phải bắt đầu bằng 0 và có 10
+                                    số
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label"
+                                    ><i class="fas fa-lock"></i> Mật khẩu</label
+                                >
+                                <div class="password-input">
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="registerPassword"
+                                        placeholder="Nhập mật khẩu"
+                                        required
+                                        minlength="6"
+                                    />
+                                    <button
+                                        type="button"
+                                        class="toggle-password"
+                                    >
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Mật khẩu phải có ít nhất 6 ký tự
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label"
+                                    ><i class="fas fa-lock"></i> Xác nhận mật
+                                    khẩu</label
+                                >
+                                <div class="password-input">
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="registerConfirmPassword"
+                                        placeholder="Nhập lại mật khẩu"
+                                        required
+                                    />
+                                    <button
+                                        type="button"
+                                        class="toggle-password"
+                                    >
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Mật khẩu xác nhận không khớp
+                                </div>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="agreeTerms"
+                                    required
+                                />
+                                <label
+                                    class="form-check-label"
+                                    for="agreeTerms"
+                                >
+                                    Tôi đồng ý với
+                                    <a href="#">Điều khoản dịch vụ</a> và
+                                    <a href="#">Chính sách bảo mật</a>
+                                </label>
+                                <div class="invalid-feedback">
+                                    Bạn cần đồng ý với điều khoản
+                                </div>
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100 btn-glow"
+                            >
+                                <i class="fas fa-user-plus"></i> Đăng ký
+                            </button>
+                        </form>
+                        <!-- <div class="auth-divider">
+                            <span>hoặc đăng ký với</span>
+                        </div> -->
+                        <div class="social-login">
+                            <button class="btn btn-google">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button class="btn btn-facebook">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </button>
+                        </div>
+                        <div class="auth-switch">
+                            Đã có tài khoản?
+                            <a href="#" id="switchToLogin">Đăng nhập ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ COURSE DETAIL MODAL ============ -->
+        <div class="modal fade" id="courseDetailModal" tabindex="-1">
+            <div
+                class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+            >
+                <div class="modal-content course-detail-modal">
+                    <div
+                        class="modal-header course-detail-header"
+                        id="courseDetailHeader"
+                    >
+                        <button
+                            type="button"
+                            class="btn-close btn-close-white"
+                            data-bs-dismiss="modal"
+                        ></button>
+                    </div>
+                    <div class="modal-body" id="courseDetailBody">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ BACK TO TOP ============ -->
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+        <script src="./js/script.js" defer></script>
+    </body>
+</html>
