@@ -133,6 +133,7 @@ const courses = [
     { id: 6, title: 'Lập Trình Backend NodeJS', category: 'backend', icon: 'fab fa-node-js', color: 'linear-gradient(135deg, #68a063, #3c873a)', level: 'Trung bình', lessons: 54, hours: 40, students: 2900, rating: 4.8, reviews: 1100, price: 799000, originalPrice: 1499000, instructor: 'Đội Ngũ TechLearn', startDate: '27/03/2026', schedule: 'Thứ 2, Thứ 4, Thứ 6', time: '21h - 23h', highlights: ['2 Project lớn','Kiến thức web Backend','Design hệ thống website','Kiến thức chuyên sâu về thiết kế web phía server'], desc: 'Xây dựng RESTful API chuyên nghiệp với Node.js, Express, MongoDB và JWT Authentication.', curriculum: ['Node.js Core Modules','Express.js Routing & Middleware','MongoDB & Mongoose','REST API Design Best Practices','Authentication với JWT','File Upload & Cloud Storage','Dự án: Blog API','Dự án: E-commerce API'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Postman Collection đầy đủ'] },
     { id: 7, title: 'Python Django - Web Framework', category: 'backend', icon: 'fab fa-python', color: 'linear-gradient(135deg, #3776ab, #ffd43b)', level: 'Trung bình', lessons: 60, hours: 44, students: 2100, rating: 4.7, reviews: 890, price: 849000, originalPrice: 1499000, instructor: 'Đội Ngũ TechLearn', startDate: '05/04/2026', schedule: 'Thứ 3, Thứ 5, Thứ 7', time: '20h - 22h', highlights: ['Django REST Framework','ORM & Database Design','Cloud Deployment','Celery Task Queue'], desc: 'Làm chủ Django framework, ORM, REST Framework. Deploy ứng dụng lên cloud.', curriculum: ['Python Web cơ bản','Django MTV Pattern','Django ORM & Migrations','Django REST Framework','Celery & Task Queue','Docker & Deployment','Dự án: Blog Platform','Dự án: Online Store API'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Deploy guide chi tiết'] },
     { id: 8, title: 'Java Spring Boot Masterclass', category: 'backend', icon: 'fab fa-java', color: 'linear-gradient(135deg, #007396, #f89820)', level: 'Nâng cao', lessons: 75, hours: 55, students: 1800, rating: 4.8, reviews: 760, price: 999000, originalPrice: 1899000, instructor: 'Đội Ngũ TechLearn', startDate: '12/04/2026', schedule: 'Thứ 2, Thứ 4, Thứ 6', time: '19h - 21h', highlights: ['Microservices Architecture','Spring Security & OAuth2','Docker & Kubernetes','CI/CD Pipeline'], desc: 'Phát triển microservices với Spring Boot, Spring Security, JPA/Hibernate và Docker.', curriculum: ['Spring Boot Fundamentals','Spring Data JPA & Hibernate','Spring Security & OAuth2','Microservices Architecture','Docker & Kubernetes','CI/CD Pipeline','Dự án: Banking API','Dự án: Microservices E-commerce'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Microservices template'] },
+    { id: 23, title: 'Lập Trình Backend Với Go (Golang)', category: 'backend', icon: 'fa-brands fa-golang', color: 'linear-gradient(135deg, #00add8, #007d9c)', level: 'Trung bình', lessons: 52, hours: 38, students: 1400, rating: 4.8, reviews: 520, price: 899000, originalPrice: 1699000, instructor: 'Đội Ngũ TechLearn', startDate: '05/05/2026', schedule: 'Thứ 2, Thứ 4, Thứ 6', time: '19h - 21h', highlights: ['Hiệu năng cực cao','Concurrency với Goroutines','Xây dựng Microservices','High Performance System'], desc: 'Làm chủ ngôn ngữ Go, concurrency, microservices và deploy hệ thống hiệu năng cao.', curriculum: ['Go Fundamentals','Concurrency & Goroutines','Standard Library chuyên sâu','REST API với Gin Framework','GORM & Database Management','Microservices với gRPC','Dự án: High-performance API','Dự án: Real-time Chat Service'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Source code đầy đủ'] },
     { id: 9, title: 'Cơ Sở Dữ Liệu Và SQL', category: 'backend', icon: 'fas fa-database', color: 'linear-gradient(135deg, #336791, #4169E1)', level: 'Cơ bản → Nâng cao', lessons: 26, hours: 30, students: 2500, rating: 4.6, reviews: 120, price: 599000, originalPrice: 1099000, instructor: 'Đội Ngũ TechLearn', startDate: '25/04/2026', schedule: 'Thứ 2, Thứ 5, Thứ 7', time: '21h - 23h', highlights: ['150 bài tập SQL','Web chấm bài SQL tự động','3 Project ứng dụng','Database optimization'], desc: 'Master SQL, thiết kế database, optimization, và NoSQL với MongoDB.', curriculum: ['SQL Fundamentals','Joins, Subqueries, CTE','Database Design & Normalization','Indexing & Performance Tuning','Transaction & Concurrency','MongoDB cơ bản đến nâng cao','Dự án: Design Database cho E-commerce','Dự án: Migration & Optimization'], benefits: ['Truy cập trọn đời','100+ bài tập SQL','Database templates'] },
 
     // FULLSTACK
@@ -159,7 +160,7 @@ const courses = [
 // COURSE RENDERING & FILTERING
 // ============================================
 let currentCategory = 'all';
-let visibleCount = 8;
+let visibleCount = 9;
 
 function createCourseCard(course) {
     const discount = Math.round((1 - course.price / course.originalPrice) * 100);
@@ -220,7 +221,7 @@ function initCourseFilters() {
         $('.category-filter .filter-btn[data-category]').removeClass('active');
         $(this).addClass('active');
         currentCategory = $(this).data('category');
-        visibleCount = 8;
+        visibleCount = 9;
         renderCourses(currentCategory);
     });
 
