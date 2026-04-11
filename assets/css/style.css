@@ -2281,6 +2281,116 @@ a:hover {
 }
 
 /* ============================================
+   FORM VALIDATION STATES
+   ============================================ */
+
+/* Invalid field - red border & glow */
+.auth-modal .form-control.is-invalid {
+    border-color: #f5576c !important;
+    box-shadow: 0 0 0 3px rgba(245, 87, 108, 0.2) !important;
+    background-image: none !important;
+    padding-right: 15px !important;
+}
+
+.auth-modal .password-input .form-control.is-invalid {
+    padding-right: 45px !important;
+}
+
+/* Valid field - green border & glow */
+.auth-modal .form-control.is-valid {
+    border-color: #43e97b !important;
+    box-shadow: 0 0 0 3px rgba(67, 233, 123, 0.15) !important;
+    background-image: none !important;
+    padding-right: 15px !important;
+}
+
+.auth-modal .password-input .form-control.is-valid {
+    padding-right: 45px !important;
+}
+
+/* Show invalid feedback text */
+.auth-modal .form-control.is-invalid ~ .invalid-feedback,
+.auth-modal .password-input:has(.form-control.is-invalid) ~ .invalid-feedback {
+    display: block !important;
+}
+
+/* Invalid feedback styling */
+.auth-modal .invalid-feedback {
+    display: none;
+    color: #f5576c;
+    font-size: 0.82rem;
+    font-weight: 500;
+    margin-top: 6px;
+    padding-left: 2px;
+    animation: fadeInDown 0.3s ease;
+}
+
+.auth-modal .invalid-feedback::before {
+    content: '\f06a';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 5px;
+    font-size: 0.75rem;
+}
+
+/* Checkbox validation */
+.auth-modal .form-check-input.is-invalid {
+    border-color: #f5576c !important;
+    box-shadow: 0 0 0 3px rgba(245, 87, 108, 0.2) !important;
+}
+
+.auth-modal .form-check-input.is-invalid ~ .form-check-label {
+    color: #f5576c;
+}
+
+.auth-modal .form-check .form-check-input.is-invalid ~ .invalid-feedback {
+    display: block !important;
+}
+
+.auth-modal .form-check-input.is-valid {
+    border-color: #43e97b !important;
+}
+
+/* Shake animation for invalid fields on submit */
+@keyframes shakeField {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+    20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-modal .form-control.is-invalid {
+    animation: shakeField 0.4s ease;
+}
+
+/* Focus states for invalid/valid fields */
+.auth-modal .form-control.is-invalid:focus {
+    border-color: #f5576c !important;
+    box-shadow: 0 0 0 3px rgba(245, 87, 108, 0.25) !important;
+}
+
+.auth-modal .form-control.is-valid:focus {
+    border-color: #43e97b !important;
+    box-shadow: 0 0 0 3px rgba(67, 233, 123, 0.2) !important;
+}
+
+/* Transition for smooth state changes */
+.auth-modal .form-control {
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+/* ============================================
    TOAST
    ============================================ */
 .toast {

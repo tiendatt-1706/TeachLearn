@@ -302,36 +302,239 @@ function initHeroSearch() {
 }
 
 // ============================================
-// AUTH FORMS
+// AUTH FORMS - Validation System
 // ============================================
+
+// --- Validation helper functions ---
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function validatePhone(phone) {
+    const re = /^0[0-9]{9}$/;
+    return re.test(phone);
+}
+
+function setFieldError(field, message) {
+    const $field = $(field);
+    $field.removeClass('is-valid').addClass('is-invalid');
+    // Update the feedback message
+    const $feedback = $field.closest('.mb-3, .form-check').find('.invalid-feedback');
+    if ($feedback.length && message) {
+        $feedback.text(message);
+    }
+}
+
+function setFieldValid(field) {
+    $(field).removeClass('is-invalid').addClass('is-valid');
+}
+
+function clearFieldState(field) {
+    $(field).removeClass('is-invalid is-valid');
+}
+
+// Validate a single field, returns true if valid
+function validateField(fieldId) {
+    const $field = $('#' + fieldId);
+    const value = $field.val().trim();
+
+    switch (fieldId) {
+        case 'loginEmail':
+        case 'registerEmail':
+            if (!value) {
+                setFieldError($field, 'Vui lòng nhập email');
+                return false;
+            }
+            if (!validateEmail(value)) {
+                setFieldError($field, 'Email không đúng định dạng (ví dụ: abc@gmail.com)');
+                return false;
+            }
+            setFieldValid($field);
+            return true;
+
+        case 'loginPassword':
+            if (!value) {
+                setFieldError($field, 'Vui lòng nhập mật khẩu');
+                return false;
+            }
+            if (value.length < 6) {
+                setFieldError($field, 'Mật khẩu phải có ít nhất 6 ký tự');
+                return false;
+            }
+            setFieldValid($field);
+            return true;
+
+        case 'registerName':
+            if (!value) {
+                setFieldError($field, 'Vui lòng nhập họ và tên');
+                return false;
+            }
+            if (value.length < 2) {
+                setFieldError($field, 'Họ tên phải có ít nhất 2 ký tự');
+                return false;
+            }
+            // Check for numbers or special characters
+            if (/[0-9!@#$%^&*()_+=\[\]{};':"\\|,.<>\/?]/.test(value)) {
+                setFieldError($field, 'Họ tên không được chứa số hoặc ký tự đặc biệt');
+                return false;
+            }
+            setFieldValid($field);
+            return true;
+
+        case 'registerPhone':
+            if (!value) {
+                setFieldError($field, 'Vui lòng nhập số điện thoại');
+                return false;
+            }
+            if (!validatePhone(value)) {
+                setFieldError($field, 'Số điện thoại phải bắt đầu bằng 0 và có đúng 10 chữ số');
+                return false;
+            }
+            setFieldValid($field);
+            return true;
+
+        case 'registerPassword':
+            if (!value) {
+                setFieldError($field, 'Vui lòng nhập mật khẩu');
+                return false;
+            }
+            if (value.length < 6) {
+                setFieldError($field, 'Mật khẩu phải có ít nhất 6 ký tự');
+                return false;
+            }
+            setFieldValid($field);
+            // Also re-validate confirm password if it has a value
+            const confirmVal = $('#registerConfirmPassword').val().trim();
+            if (confirmVal) {
+                validateField('registerConfirmPassword');
+            }
+            return true;
+
+        case 'registerConfirmPassword':
+            if (!value) {
+                setFieldError($field, 'Vui lòng nhập lại mật khẩu');
+                return false;
+            }
+            if (value !== $('#registerPassword').val().trim()) {
+                setFieldError($field, 'Mật khẩu xác nhận không khớp');
+                return false;
+            }
+            setFieldValid($field);
+            return true;
+
+        case 'agreeTerms':
+            if (!$field.is(':checked')) {
+                setFieldError($field, 'Bạn cần đồng ý với điều khoản dịch vụ');
+                return false;
+            }
+            setFieldValid($field);
+            return true;
+
+        default:
+            return true;
+    }
+}
+
 function initAuthForms() {
+    // --- Real-time validation on blur ---
+    const loginFields = ['loginEmail', 'loginPassword'];
+    const registerFields = ['registerName', 'registerEmail', 'registerPhone', 'registerPassword', 'registerConfirmPassword'];
+
+    // Validate on blur (when user leaves a field)
+    loginFields.concat(registerFields).forEach(function(fieldId) {
+        $(document).on('blur', '#' + fieldId, function() {
+            const value = $(this).val().trim();
+            // Only validate if user has typed something (don't annoy on empty first touch)
+            if (value || $(this).hasClass('is-invalid')) {
+                validateField(fieldId);
+            }
+        });
+
+        // Clear error state while typing (but don't show valid until blur)
+        $(document).on('input', '#' + fieldId, function() {
+            if ($(this).hasClass('is-invalid')) {
+                validateField(fieldId);
+            }
+        });
+    });
+
+    // Checkbox change validation
+    $(document).on('change', '#agreeTerms', function() {
+        validateField('agreeTerms');
+    });
+
+    // --- Clear all validation states when modal opens ---
+    $(document).on('shown.bs.modal', '#loginModal, #registerModal', function() {
+        $(this).find('.form-control').removeClass('is-invalid is-valid');
+        $(this).find('.form-check-input').removeClass('is-invalid is-valid');
+    });
+
+    // --- Login Form Submit ---
     $(document).on('submit', '#loginForm', function(e) {
         e.preventDefault();
-        const email = $('#loginEmail').val();
-        const password = $('#loginPassword').val();
-        if (!email || !password) { showToast('Vui lòng điền đầy đủ thông tin!', 'warning'); return; }
-        if (password.length < 6) { showToast('Mật khẩu phải có ít nhất 6 ký tự!', 'warning'); return; }
+
+        let isValid = true;
+
+        // Validate all login fields
+        loginFields.forEach(function(fieldId) {
+            if (!validateField(fieldId)) {
+                isValid = false;
+            }
+        });
+
+        if (!isValid) {
+            showToast('Vui lòng kiểm tra lại thông tin đăng nhập!', 'warning');
+            // Focus the first invalid field
+            $(this).find('.is-invalid').first().focus();
+            return;
+        }
+
+        // All valid - success
         showToast('Đăng nhập thành công! 🎉', 'success');
         bootstrap.Modal.getInstance(document.getElementById('loginModal')).hide();
         this.reset();
+        // Clear validation states
+        $(this).find('.form-control').removeClass('is-invalid is-valid');
     });
 
+    // --- Register Form Submit ---
     $(document).on('submit', '#registerForm', function(e) {
         e.preventDefault();
-        const name = $('#registerName').val();
-        const email = $('#registerEmail').val();
-        const phone = $('#registerPhone').val();
-        const password = $('#registerPassword').val();
-        const confirmPassword = $('#registerConfirmPassword').val();
-        if (!name || !email || !phone || !password) { showToast('Vui lòng điền đầy đủ thông tin!', 'warning'); return; }
-        if (password.length < 6) { showToast('Mật khẩu phải có ít nhất 6 ký tự!', 'warning'); return; }
-        if (password !== confirmPassword) { showToast('Mật khẩu xác nhận không khớp!', 'warning'); return; }
-        if (!$('#agreeTerms').is(':checked')) { showToast('Vui lòng đồng ý với điều khoản sử dụng!', 'warning'); return; }
+
+        let isValid = true;
+
+        // Validate all register fields
+        registerFields.forEach(function(fieldId) {
+            if (!validateField(fieldId)) {
+                isValid = false;
+            }
+        });
+
+        // Validate terms checkbox
+        if (!validateField('agreeTerms')) {
+            isValid = false;
+        }
+
+        if (!isValid) {
+            showToast('Vui lòng kiểm tra lại thông tin đăng ký!', 'warning');
+            // Focus the first invalid field
+            const $firstInvalid = $(this).find('.is-invalid').first();
+            if ($firstInvalid.length) {
+                $firstInvalid.focus();
+            }
+            return;
+        }
+
+        // All valid - success
         showToast('Đăng ký thành công! Chào mừng bạn! 🎉', 'success');
         bootstrap.Modal.getInstance(document.getElementById('registerModal')).hide();
         this.reset();
+        // Clear validation states
+        $(this).find('.form-control, .form-check-input').removeClass('is-invalid is-valid');
     });
 
+    // --- Course Register Form ---
     $(document).on('submit', '#courseRegisterForm', function(e) {
         e.preventDefault();
         showToast('Đăng ký khóa học thành công! TechLearn sẽ liên hệ với bạn sớm nhất. 🚀', 'success');
