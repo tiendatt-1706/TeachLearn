@@ -1,9 +1,9 @@
-// ============================================
-// TechLearn - Single Page JavaScript
-// ============================================
+
+
+
 
 $(document).ready(function() {
-    // --- Init AOS ---
+    
     AOS.init({
         duration: 800,
         easing: 'ease-out-cubic',
@@ -11,11 +11,11 @@ $(document).ready(function() {
         offset: 50
     });
 
-    // --- Navbar Scroll Effect ---
+    
     $(window).on('scroll', function() {
         const scrollTop = $(this).scrollTop();
         
-        // Show sub-nav if at top
+        
         if (scrollTop < 400) {
             $('.course-detail-nav-wrapper').fadeIn(200);
         }
@@ -28,7 +28,7 @@ $(document).ready(function() {
             $('#backToTop').removeClass('visible');
         }
 
-        // Active nav link on scroll (Home)
+        
         $('section[id]').each(function() {
             const top = $(this).offset().top - 100;
             const bottom = top + $(this).outerHeight();
@@ -39,7 +39,7 @@ $(document).ready(function() {
             }
         });
 
-        // Active nav link on scroll (Course Detail)
+        
         $('.course-section[id]').each(function() {
             const id = $(this).attr('id');
             const offset = (id === 'section-register') ? 130 : 200;
@@ -50,7 +50,7 @@ $(document).ready(function() {
                 $('.course-detail-nav-item').removeClass('active');
                 $(`.course-detail-nav-item[href="#${id}"]`).addClass('active');
                 
-                // --- Hide sub-nav specifically on Register section ---
+                
                 if (id === 'section-register') {
                     $('.course-detail-nav-wrapper').fadeOut(200);
                 } else {
@@ -60,14 +60,14 @@ $(document).ready(function() {
         });
     });
 
-    // --- Smooth Scroll ---
+    
     $('a[href^="#"]').on('click', function(e) {
         const target = $(this.getAttribute('href'));
         if (target.length) {
             e.preventDefault();
             let offset = 70;
             if ($(this).hasClass('course-detail-nav-item')) {
-                // If register, align with main navbar + small gap (approx 100px) and hide sub-nav immediately
+                
                 if (target.attr('id') === 'section-register') {
                     offset = 110;
                     $('.course-detail-nav-wrapper').fadeOut(100);
@@ -80,75 +80,75 @@ $(document).ready(function() {
         }
     });
 
-    // --- Back to Top ---
+    
     $('#backToTop').on('click', function() {
         $('html, body').animate({ scrollTop: 0 }, 600);
     });
 
-    // --- Close mobile nav on link click ---
+    
     $('.navbar-nav .nav-link').on('click', function() {
         if ($(window).width() < 992) {
             $('#navbarContent').collapse('hide');
         }
     });
 
-    // --- Render Courses ---
+    
     renderCourses('all');
     initCourseFilters();
 
-    // --- Hero Counter Animation ---
+    
     initHeroCounter();
 
-    // --- Hero Search ---
+    
     initHeroSearch();
 
-    // --- Auth Forms ---
+    
     initAuthForms();
 
-    // --- Toggle Password ---
+    
     initTogglePassword();
 
-    // --- Modal Switch ---
+    
     initModalSwitch();
 
-    // --- Footer Category Links ---
+    
     initFooterCategoryLinks();
 
-    // --- Course Detail Setup ---
+    
     initCourseDetail();
 });
 
-// ============================================
-// COURSE DATA
-// ============================================
+
+
+
 const courses = [
-    // FRONTEND
+    
     { id: 1, title: 'HTML & CSS Từ Cơ Bản Đến Pro', category: 'frontend', icon: 'fab fa-html5', color: 'linear-gradient(135deg, #e44d26, #f16529)', level: 'Cơ bản', lessons: 48, hours: 32, students: 3200, rating: 4.8, reviews: 1300, price: 499000, originalPrice: 999000, instructor: 'Đội Ngũ TechLearn', startDate: '10/04/2026', schedule: 'Thứ 2, Thứ 4, Thứ 6', time: '20h - 22h', highlights: ['Xây dựng 5 Project thực tế','Thành thạo Flexbox & Grid','Responsive Design chuyên nghiệp','Tối ưu SEO & Performance'], desc: 'Nắm vững HTML5 & CSS3, Flexbox, Grid, Responsive Design. Xây dựng website hoàn chỉnh từ bản thiết kế Figma.', curriculum: ['Giới thiệu HTML & Semantic Tags','CSS Selectors & Box Model','Flexbox Layout hoàn chỉnh','CSS Grid nâng cao','Responsive Design & Media Queries','CSS Animation & Transition','Dự án: Landing Page thực tế','Dự án: Portfolio Website'], benefits: ['Truy cập trọn đời khóa học','Chứng chỉ hoàn thành','Source code & tài liệu đầy đủ','Hỗ trợ mentor 24/7','Cộng đồng học viên 5000+'] },
     { id: 2, title: 'JavaScript ES6+ Hoàn Chỉnh', category: 'frontend', icon: 'fab fa-js-square', color: 'linear-gradient(135deg, #f7df1e, #e8b708)', level: 'Cơ bản → Nâng cao', lessons: 65, hours: 45, students: 2800, rating: 4.9, reviews: 980, price: 699000, originalPrice: 1299000, instructor: 'Đội Ngũ TechLearn', startDate: '15/04/2026', schedule: 'Thứ 3, Thứ 5, Thứ 7', time: '19h - 21h', highlights: ['3 Project lớn','Async/Await thành thạo','DOM Manipulation nâng cao','100+ bài tập thực hành'], desc: 'Từ biến, hàm đến Async/Await, DOM Manipulation, Fetch API. Xây dựng ứng dụng thực tế.', curriculum: ['Biến, kiểu dữ liệu & Operators','Hàm, Arrow Function, Closure','Array/Object methods nâng cao','ES6+ Destructuring, Spread, Modules','DOM Manipulation & Events','Async/Await, Promises, Fetch API','Dự án: Quiz App','Dự án: Weather App với API'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','100+ bài tập thực hành','Code review cá nhân'] },
     { id: 3, title: 'ReactJS - Xây Dựng Web App Hiện Đại', category: 'frontend', icon: 'fab fa-react', color: 'linear-gradient(135deg, #61dafb, #0ea5e9)', level: 'Trung bình', lessons: 72, hours: 52, students: 4100, rating: 4.9, reviews: 1600, price: 899000, originalPrice: 1699000, instructor: 'Đội Ngũ TechLearn', startDate: '20/04/2026', schedule: 'Thứ 2, Thứ 4, Thứ 6', time: '20h - 22h', highlights: ['5 Project thực tế','React Hooks chuyên sâu','Redux & State Management','Deploy lên Vercel/AWS'], desc: 'Thành thạo React Hooks, Redux, React Router. Build các project thực tế chuẩn production.', curriculum: ['React Components & JSX','React Hooks (useState, useEffect,...)','Context API & State Management','React Router v6','Redux Toolkit','Tối ưu performance','Dự án: E-commerce App','Dự án: Social Media Dashboard'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','5 dự án thực tế','Mock interview practice'] },
     { id: 4, title: 'Vue.js 3 Master Class', category: 'frontend', icon: 'fab fa-vuejs', color: 'linear-gradient(135deg, #42b883, #35495e)', level: 'Trung bình', lessons: 52, hours: 38, students: 1900, rating: 4.7, reviews: 720, price: 799000, originalPrice: 1399000, instructor: 'Đội Ngũ TechLearn', startDate: '25/04/2026', schedule: 'Thứ 3, Thứ 5, Thứ 7', time: '19h - 21h', highlights: ['Composition API thuần thục','Pinia State Management','4 Project hoàn chỉnh','Testing với Vitest'], desc: 'Học Vue 3 Composition API, Vuex, Vue Router. Xây dựng SPA chuyên nghiệp.', curriculum: ['Vue 3 Composition API','Reactive Data & Computed','Vue Router & Navigation Guards','Pinia State Management','Component Design Patterns','Testing với Vitest','Dự án: Task Management App','Dự án: Blog Platform'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Source code tất cả dự án'] },
     { id: 5, title: 'Angular - Enterprise Web Development', category: 'frontend', icon: 'fab fa-angular', color: 'linear-gradient(135deg, #dd0031, #c3002f)', level: 'Nâng cao', lessons: 68, hours: 50, students: 1200, rating: 4.6, reviews: 540, price: 999000, originalPrice: 1799000, instructor: 'Đội Ngũ TechLearn', startDate: '01/05/2026', schedule: 'Thứ 2, Thứ 5, Thứ 7', time: '21h - 23h', highlights: ['Enterprise-grade Projects','TypeScript chuyên sâu','RxJS & NgRx','Microservices Architecture'], desc: 'Xây dựng ứng dụng enterprise với Angular, TypeScript, RxJS và Material UI.', curriculum: ['TypeScript fundamentals','Angular Components & Modules','Services & Dependency Injection','RxJS Observables','Angular Material UI','NgRx State Management','Dự án: CRM Dashboard','Dự án: Real-time Chat App'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Enterprise-grade projects'] },
 
-    // BACKEND
+    
     { id: 6, title: 'Lập Trình Backend NodeJS', category: 'backend', icon: 'fab fa-node-js', color: 'linear-gradient(135deg, #68a063, #3c873a)', level: 'Trung bình', lessons: 54, hours: 40, students: 2900, rating: 4.8, reviews: 1100, price: 799000, originalPrice: 1499000, instructor: 'Đội Ngũ TechLearn', startDate: '27/03/2026', schedule: 'Thứ 2, Thứ 4, Thứ 6', time: '21h - 23h', highlights: ['2 Project lớn','Kiến thức web Backend','Design hệ thống website','Kiến thức chuyên sâu về thiết kế web phía server'], desc: 'Xây dựng RESTful API chuyên nghiệp với Node.js, Express, MongoDB và JWT Authentication.', curriculum: ['Node.js Core Modules','Express.js Routing & Middleware','MongoDB & Mongoose','REST API Design Best Practices','Authentication với JWT','File Upload & Cloud Storage','Dự án: Blog API','Dự án: E-commerce API'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Postman Collection đầy đủ'] },
     { id: 7, title: 'Python Django - Web Framework', category: 'backend', icon: 'fab fa-python', color: 'linear-gradient(135deg, #3776ab, #ffd43b)', level: 'Trung bình', lessons: 60, hours: 44, students: 2100, rating: 4.7, reviews: 890, price: 849000, originalPrice: 1499000, instructor: 'Đội Ngũ TechLearn', startDate: '05/04/2026', schedule: 'Thứ 3, Thứ 5, Thứ 7', time: '20h - 22h', highlights: ['Django REST Framework','ORM & Database Design','Cloud Deployment','Celery Task Queue'], desc: 'Làm chủ Django framework, ORM, REST Framework. Deploy ứng dụng lên cloud.', curriculum: ['Python Web cơ bản','Django MTV Pattern','Django ORM & Migrations','Django REST Framework','Celery & Task Queue','Docker & Deployment','Dự án: Blog Platform','Dự án: Online Store API'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Deploy guide chi tiết'] },
     { id: 8, title: 'Java Spring Boot Masterclass', category: 'backend', icon: 'fab fa-java', color: 'linear-gradient(135deg, #007396, #f89820)', level: 'Nâng cao', lessons: 75, hours: 55, students: 1800, rating: 4.8, reviews: 760, price: 999000, originalPrice: 1899000, instructor: 'Đội Ngũ TechLearn', startDate: '12/04/2026', schedule: 'Thứ 2, Thứ 4, Thứ 6', time: '19h - 21h', highlights: ['Microservices Architecture','Spring Security & OAuth2','Docker & Kubernetes','CI/CD Pipeline'], desc: 'Phát triển microservices với Spring Boot, Spring Security, JPA/Hibernate và Docker.', curriculum: ['Spring Boot Fundamentals','Spring Data JPA & Hibernate','Spring Security & OAuth2','Microservices Architecture','Docker & Kubernetes','CI/CD Pipeline','Dự án: Banking API','Dự án: Microservices E-commerce'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Microservices template'] },
     { id: 23, title: 'Lập Trình Backend Với Go (Golang)', category: 'backend', icon: 'fa-brands fa-golang', color: 'linear-gradient(135deg, #00add8, #007d9c)', level: 'Trung bình', lessons: 52, hours: 38, students: 1400, rating: 4.8, reviews: 520, price: 899000, originalPrice: 1699000, instructor: 'Đội Ngũ TechLearn', startDate: '05/05/2026', schedule: 'Thứ 2, Thứ 4, Thứ 6', time: '19h - 21h', highlights: ['Hiệu năng cực cao','Concurrency với Goroutines','Xây dựng Microservices','High Performance System'], desc: 'Làm chủ ngôn ngữ Go, concurrency, microservices và deploy hệ thống hiệu năng cao.', curriculum: ['Go Fundamentals','Concurrency & Goroutines','Standard Library chuyên sâu','REST API với Gin Framework','GORM & Database Management','Microservices với gRPC','Dự án: High-performance API','Dự án: Real-time Chat Service'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Source code đầy đủ'] },
     { id: 9, title: 'Cơ Sở Dữ Liệu Và SQL', category: 'backend', icon: 'fas fa-database', color: 'linear-gradient(135deg, #336791, #4169E1)', level: 'Cơ bản → Nâng cao', lessons: 26, hours: 30, students: 2500, rating: 4.6, reviews: 120, price: 599000, originalPrice: 1099000, instructor: 'Đội Ngũ TechLearn', startDate: '25/04/2026', schedule: 'Thứ 2, Thứ 5, Thứ 7', time: '21h - 23h', highlights: ['150 bài tập SQL','Web chấm bài SQL tự động','3 Project ứng dụng','Database optimization'], desc: 'Master SQL, thiết kế database, optimization, và NoSQL với MongoDB.', curriculum: ['SQL Fundamentals','Joins, Subqueries, CTE','Database Design & Normalization','Indexing & Performance Tuning','Transaction & Concurrency','MongoDB cơ bản đến nâng cao','Dự án: Design Database cho E-commerce','Dự án: Migration & Optimization'], benefits: ['Truy cập trọn đời','100+ bài tập SQL','Database templates'] },
 
-    // FULLSTACK
+    
     { id: 10, title: 'Lập Trình Fullstack Web', category: 'fullstack', icon: 'fas fa-code', color: 'linear-gradient(135deg, #667eea, #764ba2)', level: 'Trung bình → Nâng cao', lessons: 92, hours: 70, students: 3500, rating: 4.9, reviews: 128, price: 1299000, originalPrice: 2499000, instructor: 'Đội Ngũ TechLearn', startDate: '21/03/2026', schedule: 'Thứ 3, Thứ 5, Thứ 7', time: '19h - 21h', highlights: ['7 Project','Kiến thức web Frontend và Backend','Phân tích Thiết kế hệ thống','Kiến thức chuyên sâu về thiết kế web'], desc: 'Full-stack với MongoDB, Express, React, Node.js. Build complete web application.', curriculum: ['Frontend: React + Redux','Backend: Node.js + Express','Database: MongoDB + Mongoose','Authentication & Authorization','Real-time với Socket.io','Deploy lên AWS/Vercel','Dự án: Social Network','Dự án: Project Management Tool'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','2 dự án hoàn chỉnh end-to-end'] },
     { id: 11, title: 'Next.js - React Framework Production', category: 'fullstack', icon: 'fas fa-rocket', color: 'linear-gradient(135deg, #000000, #434343)', level: 'Nâng cao', lessons: 58, hours: 42, students: 1600, rating: 4.8, reviews: 650, price: 999000, originalPrice: 1799000, instructor: 'Đội Ngũ TechLearn', startDate: '01/05/2026', schedule: 'Thứ 2, Thứ 4, Thứ 6', time: '20h - 22h', highlights: ['Server Components','App Router chuyên sâu','NextAuth Authentication','Deploy Production'], desc: 'Build production-ready apps với Next.js 14, Server Components, App Router.', curriculum: ['Next.js App Router','Server & Client Components','Data Fetching Strategies','Authentication với NextAuth','Prisma ORM','Deployment & Optimization','Dự án: SaaS Dashboard','Dự án: E-commerce Platform'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Production deployment guide'] },
     { id: 12, title: 'Laravel - PHP Framework Toàn Diện', category: 'fullstack', icon: 'fab fa-laravel', color: 'linear-gradient(135deg, #ff2d20, #e3342f)', level: 'Trung bình', lessons: 62, hours: 45, students: 2200, rating: 4.7, reviews: 880, price: 849000, originalPrice: 1599000, instructor: 'Đội Ngũ TechLearn', startDate: '08/04/2026', schedule: 'Thứ 3, Thứ 5, Thứ 7', time: '19h - 21h', highlights: ['Eloquent ORM','API Resources','Queue & Jobs','Laravel + Vue.js SPA'], desc: 'Xây dựng ứng dụng web hoàn chỉnh với Laravel, MySQL, Vue.js.', curriculum: ['Laravel Routing & Controllers','Eloquent ORM','Blade Templating','Laravel API Resources','Queue & Background Jobs','Laravel + Vue.js SPA','Dự án: CMS Platform','Dự án: Online Learning Platform'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Starter template'] },
     { id: 13, title: 'DevOps & Cloud Engineering', category: 'fullstack', icon: 'fab fa-docker', color: 'linear-gradient(135deg, #2496ed, #0db7ed)', level: 'Nâng cao', lessons: 50, hours: 38, students: 1300, rating: 4.7, reviews: 520, price: 1099000, originalPrice: 1999000, instructor: 'Đội Ngũ TechLearn', startDate: '15/04/2026', schedule: 'Thứ 2, Thứ 4, Thứ 6', time: '21h - 23h', highlights: ['Docker & Kubernetes','CI/CD Pipeline','AWS Core Services','Terraform IaC'], desc: 'Docker, Kubernetes, CI/CD, AWS. Triển khai hệ thống production-ready.', curriculum: ['Linux & Shell Scripting','Docker & Docker Compose','Kubernetes Orchestration','CI/CD với GitHub Actions','AWS Core Services','Terraform Infrastructure as Code','Dự án: Microservices Deployment','Dự án: Full Pipeline Setup'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Cloud credits tặng kèm'] },
 
-    // AI
+    
     { id: 14, title: 'Machine Learning Cơ Bản Đến Nâng Cao', category: 'ai', icon: 'fas fa-brain', color: 'linear-gradient(135deg, #4facfe, #00f2fe)', level: 'Trung bình', lessons: 55, hours: 42, students: 1800, rating: 4.8, reviews: 750, price: 999000, originalPrice: 1899000, instructor: 'Đội Ngũ TechLearn', startDate: '10/04/2026', schedule: 'Thứ 2, Thứ 5, Thứ 7', time: '20h - 22h', highlights: ['Regression & Classification','Supervised & Unsupervised','Model Optimization','2 Project thực tế'], desc: 'Từ lý thuyết đến thực hành: Regression, Classification, Clustering, Ensemble Methods.', curriculum: ['Toán cho ML: Linear Algebra, Statistics','Python cho Data Science','Supervised Learning','Unsupervised Learning','Ensemble Methods','Model Evaluation & Tuning','Dự án: House Price Prediction','Dự án: Customer Segmentation'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Jupyter Notebooks đầy đủ'] },
     { id: 15, title: 'Deep Learning Với TensorFlow & PyTorch', category: 'ai', icon: 'fas fa-microchip', color: 'linear-gradient(135deg, #ff6b35, #f7c948)', level: 'Nâng cao', lessons: 48, hours: 38, students: 1100, rating: 4.7, reviews: 430, price: 1099000, originalPrice: 2099000, instructor: 'Đội Ngũ TechLearn', startDate: '20/04/2026', schedule: 'Thứ 3, Thứ 5, Thứ 7', time: '19h - 21h', highlights: ['CNN & RNN chuyên sâu','Transfer Learning','GANs Models','Deploy AI với Flask'], desc: 'Neural Networks, CNN, RNN, Transfer Learning. Build AI models thực tế.', curriculum: ['Neural Network Fundamentals','CNN - Image Classification','RNN/LSTM - Sequence Models','Transfer Learning','GANs - Generative Models','Model Deployment với Flask','Dự án: Image Recognition App','Dự án: Sentiment Analysis'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','GPU cloud credits'] },
     { id: 16, title: 'Natural Language Processing (NLP)', category: 'ai', icon: 'fas fa-language', color: 'linear-gradient(135deg, #a18cd1, #fbc2eb)', level: 'Nâng cao', lessons: 42, hours: 35, students: 900, rating: 4.6, reviews: 380, price: 1199000, originalPrice: 2199000, instructor: 'Đội Ngũ TechLearn', startDate: '25/04/2026', schedule: 'Thứ 2, Thứ 4, Thứ 6', time: '20h - 22h', highlights: ['Transformers Architecture','Fine-tuning BERT/GPT','Chatbot Development','Text Processing'], desc: 'Text Processing, Transformers, BERT, GPT. Xây dựng chatbot và hệ thống NLP.', curriculum: ['Text Preprocessing','Word Embeddings','RNN for NLP','Attention Mechanism','Transformer Architecture','Fine-tuning BERT/GPT','Dự án: Chatbot tiếng Việt','Dự án: Text Summarization'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Pre-trained models'] },
     { id: 17, title: 'Data Science & Analytics', category: 'ai', icon: 'fas fa-chart-bar', color: 'linear-gradient(135deg, #43e97b, #38f9d7)', level: 'Cơ bản → Trung bình', lessons: 50, hours: 36, students: 2300, rating: 4.8, reviews: 920, price: 799000, originalPrice: 1499000, instructor: 'Đội Ngũ TechLearn', startDate: '01/04/2026', schedule: 'Thứ 3, Thứ 5, Thứ 7', time: '19h - 21h', highlights: ['Pandas & NumPy','Data Visualization','Statistical Analysis','Dashboard Streamlit'], desc: 'Pandas, NumPy, Matplotlib, Seaborn. Phân tích dữ liệu và visualization chuyên nghiệp.', curriculum: ['Python Pandas cơ bản đến nâng cao','NumPy cho Scientific Computing','Data Visualization','Statistical Analysis','Feature Engineering','Dashboard với Plotly/Streamlit','Dự án: Sales Analytics Dashboard','Dự án: COVID-19 Data Analysis'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','50+ Datasets thực tế'] },
 
-    // BASIC
+    
     { id: 18, title: 'Nhập Môn Lập Trình', category: 'basic', icon: 'fas fa-laptop-code', color: 'linear-gradient(135deg, #667eea, #764ba2)', level: 'Cơ bản', lessons: 35, hours: 25, students: 5200, rating: 4.9, reviews: 2100, price: 0, originalPrice: 499000, instructor: 'Đội Ngũ TechLearn', startDate: '01/04/2026', schedule: 'Thứ 2, Thứ 4, Thứ 6', time: '20h - 22h', highlights: ['Tư duy logic lập trình','Thuật toán cơ bản','Miễn phí hoàn toàn','Phù hợp người mới'], desc: 'Khóa học miễn phí cho người mới. Tư duy lập trình, logic, thuật toán cơ bản.', curriculum: ['Tư duy lập trình','Biến, kiểu dữ liệu','Câu lệnh điều kiện','Vòng lặp','Hàm & Tham số','Array & Object cơ bản','Bài tập tổng hợp','Hướng dẫn chọn lộ trình'], benefits: ['Hoàn toàn miễn phí','Chứng chỉ hoàn thành','Mentor hỗ trợ','Cộng đồng học viên'] },
     { id: 19, title: 'Git & GitHub Thực Chiến', category: 'basic', icon: 'fab fa-git-alt', color: 'linear-gradient(135deg, #f05032, #de4c36)', level: 'Cơ bản', lessons: 28, hours: 18, students: 3800, rating: 4.8, reviews: 1500, price: 299000, originalPrice: 599000, instructor: 'Đội Ngũ TechLearn', startDate: '05/04/2026', schedule: 'Thứ 2, Thứ 5, Thứ 7', time: '19h - 21h', highlights: ['Branching & Merging','Pull Request Workflow','GitHub Actions','Resolve Conflicts'], desc: 'Quản lý version control chuyên nghiệp. Branching, merging, pull request workflow.', curriculum: ['Git cơ bản: init, add, commit','Branching & Merging','Remote Repository','Pull Request Workflow','Git Flow Strategy','Resolve Conflicts','GitHub Actions cơ bản','Dự án: Collaborative Project'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Git cheat sheet'] },
     { id: 20, title: 'Cấu Trúc Dữ Liệu & Giải Thuật', category: 'basic', icon: 'fas fa-sitemap', color: 'linear-gradient(135deg, #fa709a, #fee140)', level: 'Trung bình', lessons: 55, hours: 40, students: 2600, rating: 4.7, reviews: 1100, price: 699000, originalPrice: 1299000, instructor: 'Đội Ngũ TechLearn', startDate: '10/04/2026', schedule: 'Thứ 3, Thứ 5, Thứ 7', time: '20h - 22h', highlights: ['200+ bài tập LeetCode','Big-O Notation','Dynamic Programming','Mock Interview Prep'], desc: 'Array, Linked List, Tree, Graph, Sorting, Searching. Chuẩn bị phỏng vấn tại Big Tech.', curriculum: ['Big-O Notation','Array & String Problems','Stack & Queue','Linked List','Tree & Binary Search Tree','Graph Algorithms','Sorting & Searching','Dynamic Programming'], benefits: ['Truy cập trọn đời','200+ bài tập LeetCode','Mock interview prep'] },
@@ -156,9 +156,9 @@ const courses = [
     { id: 22, title: 'Computer Science Fundamentals', category: 'basic', icon: 'fas fa-microchip', color: 'linear-gradient(135deg, #00b4db, #0083b0)', level: 'Cơ bản', lessons: 40, hours: 28, students: 1500, rating: 4.7, reviews: 620, price: 499000, originalPrice: 999000, instructor: 'Đội Ngũ TechLearn', startDate: '20/04/2026', schedule: 'Thứ 3, Thứ 5, Thứ 7', time: '19h - 21h', highlights: ['Networking & HTTP','Operating Systems','Security Fundamentals','Career Guidance'], desc: 'Kiến thức nền tảng: Networking, OS, Security, Software Engineering basics.', curriculum: ['Computer Architecture','Operating System Basics','Networking & HTTP','Database Concepts','Software Engineering','Security Fundamentals','API & Web Services','Career Guidance'], benefits: ['Truy cập trọn đời','Chứng chỉ hoàn thành','Roadmap career cá nhân'] }
 ];
 
-// ============================================
-// COURSE RENDERING & FILTERING
-// ============================================
+
+
+
 let currentCategory = 'all';
 let visibleCount = 9;
 
@@ -216,7 +216,7 @@ function renderCourses(category) {
 }
 
 function initCourseFilters() {
-    // Category filter buttons
+    
     $(document).on('click', '.category-filter .filter-btn[data-category]', function() {
         $('.category-filter .filter-btn[data-category]').removeClass('active');
         $(this).addClass('active');
@@ -225,26 +225,26 @@ function initCourseFilters() {
         renderCourses(currentCategory);
     });
 
-    // Load more button
+    
     $('#loadMoreCourses').on('click', function() {
         visibleCount += 4;
         renderCourses(currentCategory);
     });
 }
 
-// ============================================
-// COURSE DETAIL MODAL
-// ============================================
+
+
+
 window.showCourseDetail = function(id) {
-    // Check if we are currently in the /pages/ directory
+    
     const isPagesDir = window.location.pathname.includes('/pages/');
     const baseUrl = isPagesDir ? '' : 'pages/';
     window.location.href = `${baseUrl}chi-tiet-khoa-hoc.html?id=${id}`;
 };
 
-// ============================================
-// HERO COUNTER
-// ============================================
+
+
+
 function initHeroCounter() {
     const counters = document.querySelectorAll('.stat-number[data-count]');
     if (!counters.length) return;
@@ -276,21 +276,21 @@ function animateCounter(el) {
     }, 16);
 }
 
-// ============================================
-// HERO SEARCH
-// ============================================
+
+
+
 function initHeroSearch() {
     $('#btnHeroSearch, #heroSearch').on('click keypress', function(e) {
         if (e.type === 'keypress' && e.which !== 13) return;
         const query = $('#heroSearch').val().trim().toLowerCase();
         if (!query) return;
 
-        // Filter and scroll to courses
+        
         const results = courses.filter(c => c.title.toLowerCase().includes(query) || c.desc.toLowerCase().includes(query));
         if (results.length > 0) {
             $('#courseGrid').html(results.map(c => createCourseCard(c)).join(''));
             $('#loadMoreCourses').hide();
-            // Remove active from all filter buttons
+            
             $('.category-filter .filter-btn').removeClass('active');
             $('html, body').animate({ scrollTop: $('#courses').offset().top - 70 }, 600);
             AOS.refresh();
@@ -301,11 +301,11 @@ function initHeroSearch() {
     });
 }
 
-// ============================================
-// AUTH FORMS - Validation System
-// ============================================
 
-// --- Validation helper functions ---
+
+
+
+
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
@@ -319,7 +319,7 @@ function validatePhone(phone) {
 function setFieldError(field, message) {
     const $field = $(field);
     $field.removeClass('is-valid').addClass('is-invalid');
-    // Update the feedback message
+    
     const $feedback = $field.closest('.mb-3, .form-check').find('.invalid-feedback');
     if ($feedback.length && message) {
         $feedback.text(message);
@@ -334,7 +334,7 @@ function clearFieldState(field) {
     $(field).removeClass('is-invalid is-valid');
 }
 
-// Validate a single field, returns true if valid
+
 function validateField(fieldId) {
     const $field = $('#' + fieldId);
     const value = $field.val().trim();
@@ -374,7 +374,7 @@ function validateField(fieldId) {
                 setFieldError($field, 'Họ tên phải có ít nhất 2 ký tự');
                 return false;
             }
-            // Check for numbers or special characters
+            
             if (/[0-9!@#$%^&*()_+=\[\]{};':"\\|,.<>\/?]/.test(value)) {
                 setFieldError($field, 'Họ tên không được chứa số hoặc ký tự đặc biệt');
                 return false;
@@ -404,7 +404,7 @@ function validateField(fieldId) {
                 return false;
             }
             setFieldValid($field);
-            // Also re-validate confirm password if it has a value
+            
             const confirmVal = $('#registerConfirmPassword').val().trim();
             if (confirmVal) {
                 validateField('registerConfirmPassword');
@@ -437,21 +437,21 @@ function validateField(fieldId) {
 }
 
 function initAuthForms() {
-    // --- Real-time validation on blur ---
+    
     const loginFields = ['loginEmail', 'loginPassword'];
     const registerFields = ['registerName', 'registerEmail', 'registerPhone', 'registerPassword', 'registerConfirmPassword'];
 
-    // Validate on blur (when user leaves a field)
+    
     loginFields.concat(registerFields).forEach(function(fieldId) {
         $(document).on('blur', '#' + fieldId, function() {
             const value = $(this).val().trim();
-            // Only validate if user has typed something (don't annoy on empty first touch)
+            
             if (value || $(this).hasClass('is-invalid')) {
                 validateField(fieldId);
             }
         });
 
-        // Clear error state while typing (but don't show valid until blur)
+        
         $(document).on('input', '#' + fieldId, function() {
             if ($(this).hasClass('is-invalid')) {
                 validateField(fieldId);
@@ -459,24 +459,24 @@ function initAuthForms() {
         });
     });
 
-    // Checkbox change validation
+    
     $(document).on('change', '#agreeTerms', function() {
         validateField('agreeTerms');
     });
 
-    // --- Clear all validation states when modal opens ---
+    
     $(document).on('shown.bs.modal', '#loginModal, #registerModal', function() {
         $(this).find('.form-control').removeClass('is-invalid is-valid');
         $(this).find('.form-check-input').removeClass('is-invalid is-valid');
     });
 
-    // --- Login Form Submit ---
+    
     $(document).on('submit', '#loginForm', function(e) {
         e.preventDefault();
 
         let isValid = true;
 
-        // Validate all login fields
+        
         loginFields.forEach(function(fieldId) {
             if (!validateField(fieldId)) {
                 isValid = false;
@@ -485,40 +485,40 @@ function initAuthForms() {
 
         if (!isValid) {
             showToast('Vui lòng kiểm tra lại thông tin đăng nhập!', 'warning');
-            // Focus the first invalid field
+            
             $(this).find('.is-invalid').first().focus();
             return;
         }
 
-        // All valid - success
+        
         showToast('Đăng nhập thành công! 🎉', 'success');
         bootstrap.Modal.getInstance(document.getElementById('loginModal')).hide();
         this.reset();
-        // Clear validation states
+        
         $(this).find('.form-control').removeClass('is-invalid is-valid');
     });
 
-    // --- Register Form Submit ---
+    
     $(document).on('submit', '#registerForm', function(e) {
         e.preventDefault();
 
         let isValid = true;
 
-        // Validate all register fields
+        
         registerFields.forEach(function(fieldId) {
             if (!validateField(fieldId)) {
                 isValid = false;
             }
         });
 
-        // Validate terms checkbox
+        
         if (!validateField('agreeTerms')) {
             isValid = false;
         }
 
         if (!isValid) {
             showToast('Vui lòng kiểm tra lại thông tin đăng ký!', 'warning');
-            // Focus the first invalid field
+            
             const $firstInvalid = $(this).find('.is-invalid').first();
             if ($firstInvalid.length) {
                 $firstInvalid.focus();
@@ -526,15 +526,15 @@ function initAuthForms() {
             return;
         }
 
-        // All valid - success
+        
         showToast('Đăng ký thành công! Chào mừng bạn! 🎉', 'success');
         bootstrap.Modal.getInstance(document.getElementById('registerModal')).hide();
         this.reset();
-        // Clear validation states
+        
         $(this).find('.form-control, .form-check-input').removeClass('is-invalid is-valid');
     });
 
-    // --- Course Register Form ---
+    
     $(document).on('submit', '#courseRegisterForm', function(e) {
         e.preventDefault();
         showToast('Đăng ký khóa học thành công! TechLearn sẽ liên hệ với bạn sớm nhất. 🚀', 'success');
@@ -542,9 +542,9 @@ function initAuthForms() {
     });
 }
 
-// ============================================
-// TOGGLE PASSWORD
-// ============================================
+
+
+
 function initTogglePassword() {
     $(document).on('click', '.toggle-password', function() {
         const input = $(this).siblings('input');
@@ -559,9 +559,9 @@ function initTogglePassword() {
     });
 }
 
-// ============================================
-// MODAL SWITCH
-// ============================================
+
+
+
 function initModalSwitch() {
     $(document).on('click', '#switchToRegister', function(e) {
         e.preventDefault();
@@ -575,23 +575,23 @@ function initModalSwitch() {
     });
 }
 
-// ============================================
-// FOOTER CATEGORY LINKS
-// ============================================
+
+
+
 function initFooterCategoryLinks() {
     $(document).on('click', '.footer-category', function(e) {
         e.preventDefault();
         const cat = $(this).data('category');
-        // Activate the filter button
+        
         $(`.category-filter .filter-btn[data-category="${cat}"]`).click();
-        // Scroll to courses
+        
         $('html, body').animate({ scrollTop: $('#courses').offset().top - 70 }, 600);
     });
 }
 
-// ============================================
-// UTILITIES
-// ============================================
+
+
+
 function capitalize(str) {
     const map = { frontend: 'Frontend', backend: 'Backend', fullstack: 'Fullstack', ai: 'AI / ML', basic: 'Nền tảng' };
     return map[str] || str.charAt(0).toUpperCase() + str.slice(1);
@@ -610,7 +610,7 @@ function generateStars(rating) {
 }
 
 function showToast(message, type) {
-    // Remove existing toast
+    
     $('.custom-toast').remove();
     
     const icons = { success: 'fa-check-circle', warning: 'fa-exclamation-triangle', error: 'fa-times-circle', info: 'fa-info-circle' };
@@ -627,7 +627,7 @@ function showToast(message, type) {
     setTimeout(() => toast.fadeOut(300, function() { $(this).remove(); }), 3000);
 }
 
-// Add slide-in animation
+
 if (!document.getElementById('toast-styles')) {
     const style = document.createElement('style');
     style.id = 'toast-styles';
@@ -635,11 +635,11 @@ if (!document.getElementById('toast-styles')) {
     document.head.appendChild(style);
 }
 
-// ============================================
-// COURSE DETAIL PAGE INIT
-// ============================================
+
+
+
 function initCourseDetail() {
-    if (!$('#courseTitle').length) return; // Only run on course detail page
+    if (!$('#courseTitle').length) return; 
 
     const urlParams = new URLSearchParams(window.location.search);
     const courseId = parseInt(urlParams.get("id"));
@@ -930,7 +930,7 @@ function initCourseDetail() {
     });
     $("#benefitsContent").html(benefitsHtml);
 
-    // Initialize Countdown Timer
+    
     (function () {
         const daysEl = document.getElementById("days");
         const hoursEl = document.getElementById("hours");

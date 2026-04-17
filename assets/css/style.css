@@ -1,9 +1,6 @@
-/* ============================================
-   TechLearn - Premium Dark Theme CSS
-   Multi-page responsive design
-   ============================================ */
 
-/* --- CSS Variables --- */
+
+
 :root {
     --primary: #667eea;
     --primary-dark: #5a67d8;
@@ -28,7 +25,7 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Base Styles --- */
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg-primary);
@@ -67,7 +64,7 @@ a:hover {
     background-clip: text;
 }
 
-/* --- Section Headers --- */
+
 .section-header {
     margin-bottom: 50px;
 }
@@ -95,9 +92,7 @@ a:hover {
     margin-bottom: 15px;
 }
 
-/* ============================================
-   NAVBAR
-   ============================================ */
+
 .navbar {
     background: rgba(10, 14, 39, 0.8);
     backdrop-filter: blur(20px);
@@ -158,7 +153,7 @@ a:hover {
     align-items: center;
 }
 
-/* Override .btn-sm for Auth Buttons in Navbar */
+
 .nav-auth .btn {
     padding: 8px 20px !important;
     font-size: 0.95rem !important;
@@ -182,7 +177,7 @@ a:hover {
     transform: translateY(-2px);
 }
 
-/* Navbar Toggler */
+
 .navbar-toggler {
     border: 1px solid rgba(102, 126, 234, 0.3) !important;
     padding: 6px 12px;
@@ -197,9 +192,7 @@ a:hover {
     box-shadow: none;
 }
 
-/* ============================================
-   PAGE HEADER (Sub-pages)
-   ============================================ */
+
 .page-header {
     position: relative;
     padding: 140px 0 60px;
@@ -291,7 +284,7 @@ a:hover {
     margin: 0 auto;
 }
 
-/* Page Search */
+
 .page-search {
     max-width: 500px;
     margin: 30px auto 0;
@@ -330,9 +323,7 @@ a:hover {
     padding: 8px 24px;
 }
 
-/* ============================================
-   HERO SECTION (Home only)
-   ============================================ */
+
 .hero-section {
     position: relative;
     background: var(--bg-primary);
@@ -479,7 +470,7 @@ a:hover {
     color: var(--text-muted);
 }
 
-/* Hero Visual - Code Window */
+
 .hero-visual {
     position: relative;
     z-index: 1;
@@ -623,9 +614,7 @@ a:hover {
     }
 }
 
-/* ============================================
-   CATEGORY FILTER
-   ============================================ */
+
 .category-filter,
 .roadmap-filter,
 .faq-tabs {
@@ -674,9 +663,7 @@ a:hover {
     font-size: 0.9rem;
 }
 
-/* ============================================
-   COURSE CARDS
-   ============================================ */
+
 .course-card {
     background: var(--bg-card);
     border-radius: var(--radius);
@@ -834,9 +821,7 @@ a:hover {
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
-/* ============================================
-   COURSE CARD V2 (28Tech Style)
-   ============================================ */
+
 .course-card-v2 {
     background: var(--bg-card);
     border-radius: var(--radius);
@@ -855,7 +840,7 @@ a:hover {
     border-color: var(--primary);
 }
 
-/* Thumbnail */
+
 .card-v2-thumbnail {
     position: relative;
     padding: 20px;
@@ -936,7 +921,7 @@ a:hover {
     color: #000;
 }
 
-/* Body */
+
 .card-v2-body {
     padding: 18px 20px 20px;
     flex: 1;
@@ -1035,9 +1020,7 @@ a:hover {
     font-size: 0.85rem;
 }
 
-/* ============================================
-   COURSE DETAIL MODAL
-   ============================================ */
+
 .modal-content {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
@@ -1153,9 +1136,7 @@ a:hover {
     color: #43e97b;
 }
 
-/* ============================================
-   ROADMAP CARDS
-   ============================================ */
+
 .roadmap-card {
     background: var(--bg-card);
     border-radius: var(--radius);
@@ -1283,7 +1264,7 @@ a:hover {
     color: var(--primary);
 }
 
-/* Roadmap Detail */
+
 .roadmap-detail-section {
     margin-top: 25px;
     padding-top: 20px;
@@ -1316,7 +1297,7 @@ a:hover {
     font-size: 0.85rem;
 }
 
-/* Roadmap Comparison Table */
+
 .roadmap-comparison {
     margin-top: 60px;
     padding: 40px;
@@ -1357,15 +1338,13 @@ a:hover {
     background: rgba(102, 126, 234, 0.05);
 }
 
-/* ============================================
-   COURSE DETAIL PAGE (chi-tiet-khoa-hoc.html)
-   ============================================ */
+
 .course-detail-light-theme {
     background-color: #f8f9fa !important;
     color: #1e293b !important;
 }
 
-/* Override global navbar scroll effect for light mode */
+
 .course-detail-light-theme .navbar {
     background-color: rgba(10, 14, 39, 0.95) !important;
 }
@@ -1385,7 +1364,7 @@ a:hover {
     font-size: 1.05rem;
 }
 
-/* Tabs 28Tech Style (Pill shape) */
+
 .detail-tabs {
     border-bottom: none;
     gap: 12px;
@@ -1412,7 +1391,7 @@ a:hover {
     background: #e2e8f0 !important;
 }
 
-/* White Content Cards */
+
 .detail-card {
     background: #fff;
     border: 1px solid #e2e8f0;
@@ -1420,7 +1399,7 @@ a:hover {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-/* Accordion 28Tech Style */
+
 .curriculum-accordion .accordion-item {
     border: 1px solid #e2e8f0 !important;
     border-radius: 8px !important;
@@ -1449,7 +1428,7 @@ a:hover {
     border-top: 1px solid #e2e8f0;
 }
 
-/* Sidebar Enrollment Box */
+
 .course-enroll-sidebar {
     background: #fff;
     border: 1px solid #e2e8f0;
@@ -1512,9 +1491,7 @@ a:hover {
 }
 
 
-/* ============================================
-   REVIEW CARDS
-   ============================================ */
+
 .review-card {
     background: var(--bg-card);
     border-radius: var(--radius);
@@ -1592,7 +1569,7 @@ a:hover {
     margin: 0;
 }
 
-/* Review Stats Bar */
+
 .review-stats-bar {
     background: var(--bg-card);
     border-radius: var(--radius);
@@ -1617,9 +1594,7 @@ a:hover {
     margin-top: 5px;
 }
 
-/* ============================================
-   BLOG CARDS
-   ============================================ */
+
 .blog-card {
     background: var(--bg-card);
     border-radius: var(--radius);
@@ -1713,7 +1688,7 @@ a:hover {
     gap: 10px;
 }
 
-/* Blog Featured */
+
 .blog-featured {
     background: var(--bg-card);
     border-radius: var(--radius);
@@ -1756,9 +1731,7 @@ a:hover {
     margin-top: 15px;
 }
 
-/* ============================================
-   FAQ SECTION
-   ============================================ */
+
 .faq-accordion .accordion-item {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -1807,9 +1780,7 @@ a:hover {
     border: 1px solid var(--border-color);
 }
 
-/* ============================================
-   WHY CHOOSE US (Home)
-   ============================================ */
+
 .why-section {
     background: var(--bg-secondary);
 }
@@ -1852,9 +1823,7 @@ a:hover {
     margin: 0;
 }
 
-/* ============================================
-   QUICK LINKS (Home)
-   ============================================ */
+
 .quick-link-card {
     display: block;
     background: var(--bg-card);
@@ -1910,9 +1879,7 @@ a:hover {
     transform: translateX(5px);
 }
 
-/* ============================================
-   CTA SECTION
-   ============================================ */
+
 .cta-section {
     padding: 80px 0;
     background: var(--gradient-primary);
@@ -1956,9 +1923,7 @@ a:hover {
     flex-wrap: wrap;
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
+
 .footer-section {
     background: var(--bg-secondary);
     padding: 60px 0 30px;
@@ -2071,9 +2036,7 @@ a:hover {
     color: #f5576c;
 }
 
-/* ============================================
-   BACK TO TOP
-   ============================================ */
+
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -2102,9 +2065,7 @@ a:hover {
     transform: translateY(-5px);
 }
 
-/* ============================================
-   AUTH MODALS (Login/Register)
-   ============================================ */
+
 .auth-modal .modal-body {
     padding: 30px;
 }
@@ -2145,7 +2106,7 @@ a:hover {
     color: var(--text-muted);
 }
 
-/* Password Toggle Indicator */
+
 .password-input {
     position: relative;
     display: block;
@@ -2280,11 +2241,9 @@ a:hover {
     font-size: 0.85rem;
 }
 
-/* ============================================
-   FORM VALIDATION STATES
-   ============================================ */
 
-/* Invalid field - red border & glow */
+
+
 .auth-modal .form-control.is-invalid {
     border-color: #f5576c !important;
     box-shadow: 0 0 0 3px rgba(245, 87, 108, 0.2) !important;
@@ -2296,7 +2255,7 @@ a:hover {
     padding-right: 45px !important;
 }
 
-/* Valid field - green border & glow */
+
 .auth-modal .form-control.is-valid {
     border-color: #43e97b !important;
     box-shadow: 0 0 0 3px rgba(67, 233, 123, 0.15) !important;
@@ -2308,13 +2267,13 @@ a:hover {
     padding-right: 45px !important;
 }
 
-/* Show invalid feedback text */
+
 .auth-modal .form-control.is-invalid ~ .invalid-feedback,
 .auth-modal .password-input:has(.form-control.is-invalid) ~ .invalid-feedback {
     display: block !important;
 }
 
-/* Invalid feedback styling */
+
 .auth-modal .invalid-feedback {
     display: none;
     color: #f5576c;
@@ -2333,7 +2292,7 @@ a:hover {
     font-size: 0.75rem;
 }
 
-/* Checkbox validation */
+
 .auth-modal .form-check-input.is-invalid {
     border-color: #f5576c !important;
     box-shadow: 0 0 0 3px rgba(245, 87, 108, 0.2) !important;
@@ -2351,7 +2310,7 @@ a:hover {
     border-color: #43e97b !important;
 }
 
-/* Shake animation for invalid fields on submit */
+
 @keyframes shakeField {
     0%, 100% { transform: translateX(0); }
     10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
@@ -2373,7 +2332,7 @@ a:hover {
     animation: shakeField 0.4s ease;
 }
 
-/* Focus states for invalid/valid fields */
+
 .auth-modal .form-control.is-invalid:focus {
     border-color: #f5576c !important;
     box-shadow: 0 0 0 3px rgba(245, 87, 108, 0.25) !important;
@@ -2384,15 +2343,13 @@ a:hover {
     box-shadow: 0 0 0 3px rgba(67, 233, 123, 0.2) !important;
 }
 
-/* Transition for smooth state changes */
+
 .auth-modal .form-control {
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 
-/* ============================================
-   TOAST
-   ============================================ */
+
 .toast {
     background: var(--bg-card) !important;
     border: 1px solid var(--border-color) !important;
@@ -2405,9 +2362,7 @@ a:hover {
     border-bottom: 1px solid var(--border-color) !important;
 }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
+
 .fade-in-up {
     opacity: 0;
     transform: translateY(30px);
@@ -2419,9 +2374,7 @@ a:hover {
     transform: translateY(0);
 }
 
-/* ============================================
-   RESPONSIVE - TABLET (768px - 991px)
-   ============================================ */
+
 @media (max-width: 991.98px) {
     .hero-content h1 {
         font-size: 2.5rem;
@@ -2477,9 +2430,7 @@ a:hover {
     }
 }
 
-/* ============================================
-   RESPONSIVE - MOBILE LANDSCAPE (576px-767px)
-   ============================================ */
+
 @media (max-width: 767.98px) {
     .section-padding {
         padding: 50px 0;
@@ -2601,9 +2552,7 @@ a:hover {
     }
 }
 
-/* ============================================
-   RESPONSIVE - MOBILE PORTRAIT (<576px)
-   ============================================ */
+
 @media (max-width: 575.98px) {
     .hero-section {
         min-height: auto;
@@ -2878,9 +2827,7 @@ a:hover {
     }
 }
 
-/* ============================================
-   UTILITY CLASSES
-   ============================================ */
+
 .btn-primary {
     background: var(--gradient-primary);
     border: none;
@@ -2901,7 +2848,7 @@ a:hover {
     border-color: var(--primary);
 }
 
-/* Course Detail Nav (Sticky Tabs) */
+
 .course-detail-nav-wrapper {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -2922,11 +2869,11 @@ a:hover {
     background: #f1f5f9;
     border-radius: 40px;
     padding: 12px 0;
-    /* Bo tròn cao/thấp giữ nguyên, độ rộng do flex quyết định */
+    
     text-align: center;
-    /* Chữ căn giữa */
+    
     flex: 1;
-    /* Ép tất cả các nút chia đều và kéo giãn ra kín toàn bộ mảng */
+    
     text-decoration: none;
     transition: all 0.3s ease;
     border: none;
@@ -2936,17 +2883,17 @@ a:hover {
 
 .course-detail-nav-item:hover {
     background: #e0e7ff;
-    /* Hover màu xanh nhạt theo yêu cầu */
+    
     color: #1e3a8a;
 }
 
 .course-detail-nav-item.active {
     background: #0f172a !important;
-    /* Xanh đậm như hình */
+    
     color: #ffffff !important;
 }
 
-/* --- Registration High-Fidelity Banner --- */
+
 .register-banner {
     background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
     border-radius: 16px;
@@ -2978,7 +2925,7 @@ a:hover {
 
 .countdown-box {
     background: rgba(255, 255, 255, 0.08);
-    /* slightly transparent */
+    
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
