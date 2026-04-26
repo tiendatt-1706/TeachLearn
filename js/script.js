@@ -12,12 +12,21 @@ $(document).ready(function() {
     });
 
     
-    $(window).on('scroll', function() {
-        const scrollTop = $(this).scrollTop();
-        
-        
+    let scrollTicking = false;
+    let courseNavVisible = true;
+
+    function setCourseNavVisible(visible, duration = 200) {
+        const nav = $('.course-detail-nav-wrapper');
+        if (!nav.length || courseNavVisible === visible) return;
+        courseNavVisible = visible;
+        nav.stop(true, true)[visible ? 'fadeIn' : 'fadeOut'](duration);
+    }
+
+    function handleWindowScroll() {
+        const scrollTop = $(window).scrollTop();
+
         if (scrollTop < 400) {
-            $('.course-detail-nav-wrapper').fadeIn(200);
+            setCourseNavVisible(true);
         }
 
         if (scrollTop > 50) {
@@ -28,7 +37,6 @@ $(document).ready(function() {
             $('#backToTop').removeClass('visible');
         }
 
-        
         $('section[id]').each(function() {
             const top = $(this).offset().top - 100;
             const bottom = top + $(this).outerHeight();
@@ -39,26 +47,30 @@ $(document).ready(function() {
             }
         });
 
-        
         $('.course-section[id]').each(function() {
             const id = $(this).attr('id');
             const offset = (id === 'section-register') ? 130 : 200;
             const top = $(this).offset().top - offset;
             const bottom = top + $(this).outerHeight();
-            
+
             if (scrollTop >= top && scrollTop < bottom) {
                 $('.course-detail-nav-item').removeClass('active');
                 $(`.course-detail-nav-item[href="#${id}"]`).addClass('active');
-                
-                
-                if (id === 'section-register') {
-                    $('.course-detail-nav-wrapper').fadeOut(200);
-                } else {
-                    $('.course-detail-nav-wrapper').fadeIn(200);
-                }
+                setCourseNavVisible(id !== 'section-register');
             }
         });
+    }
+
+    $(window).on('scroll', function() {
+        if (scrollTicking) return;
+        scrollTicking = true;
+        window.requestAnimationFrame(function() {
+            handleWindowScroll();
+            scrollTicking = false;
+        });
     });
+
+    handleWindowScroll();
 
     
     $('a[href^="#"]').on('click', function(e) {
@@ -81,8 +93,11 @@ $(document).ready(function() {
     });
 
     
-    $('#backToTop').on('click', function() {
-        $('html, body').animate({ scrollTop: 0 }, 600);
+    $('#backToTop').on('click', function(e) {
+        e.preventDefault();
+        $('html, body').stop(true);
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
     });
 
     
@@ -676,9 +691,6 @@ function initCourseDetail() {
     $("#courseRating").text(course.rating);
     $("#courseReviews").text(course.reviews);
     $("#courseStudents").text(course.students);
-    if (course.rating < 4.8) {
-        $("#courseBestseller").hide();
-    }
 
     $("#sidebarTitle").text(course.title.toUpperCase());
     $("#sidebarIcon").attr("class", course.icon + " sidebar-icon");
@@ -972,4 +984,3 @@ function initCourseDetail() {
         const timer = setInterval(update, 1000);
     })();
 }
-
