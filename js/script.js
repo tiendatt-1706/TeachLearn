@@ -277,6 +277,13 @@ function initHeroCounter() {
 
 function animateCounter(el) {
     const target = parseInt(el.getAttribute('data-count'));
+    const isCompactMobile = window.matchMedia('(max-width: 767.98px)').matches;
+
+    if (isCompactMobile) {
+        el.textContent = target >= 1000 ? Math.floor(target / 1000) + 'K+' : target + (target === 98 ? '%' : '+');
+        return;
+    }
+
     const duration = 2000;
     const step = target / (duration / 16);
     let current = 0;
